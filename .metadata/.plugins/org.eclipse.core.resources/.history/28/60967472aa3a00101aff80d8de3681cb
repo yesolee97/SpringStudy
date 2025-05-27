@@ -1,0 +1,13 @@
+package kr.or.ddit.dummy.controller;
+
+import kr.or.ddit.dummy.service.DummyServiceCase1;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class DummyController {
+	public static void main(String[] args) {
+		DummyServiceCase1 service = new DummyServiceCase1();
+		StringBuffer infomation = service.readDummy("primary");
+		
+	}
+}

@@ -1,0 +1,20 @@
+package kr.or.ddit.dummy.service;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import kr.or.ddit.dummy.dao.DummyDAO;
+
+public class DummyServiceCase1 {
+	private DummyDAO dao;
+	
+	public StringBuffer readDummy(String pk){
+		Map<String, Object> rawData = dao.selectDummy(pk);
+		StringBuffer infomation = new StringBuffer();
+		for(Entry<String, Object> entry : rawData.entrySet()) {
+			
+		}
+		return infomation;
+	}
+}

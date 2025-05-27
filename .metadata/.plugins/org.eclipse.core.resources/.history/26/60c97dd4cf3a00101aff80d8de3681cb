@@ -1,0 +1,7 @@
+package kr.or.ddit.case03.objs;
+
+public class EagerDummy {
+	public EagerDummy() {
+		log.info("{} 객체 기본생성자로 생성", this.getClass().getName())
+	}
+}

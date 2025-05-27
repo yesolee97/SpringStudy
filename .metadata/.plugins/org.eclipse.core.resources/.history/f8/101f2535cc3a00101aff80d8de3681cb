@@ -1,0 +1,7 @@
+package kr.or.ddit.case03.conf;
+
+public class Case03ContainerBeaManagementPolicyConfig {
+	public StringBuffer sb1() {
+		
+	}
+}

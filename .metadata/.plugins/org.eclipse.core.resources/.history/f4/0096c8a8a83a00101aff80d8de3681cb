@@ -1,0 +1,11 @@
+package kr.or.ddit.dummy.service;
+
+import kr.or.ddit.dummy.dao.DummyDAO;
+
+public class DummyServiceCase1 {
+	private DummyDAO dao;
+	
+	public StringBuffer readDummy(String pk){
+		
+	}
+}

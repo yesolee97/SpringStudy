@@ -1,0 +1,40 @@
+package kr.or.ddit.dummy.case01.conf;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import kr.or.ddit.dummy.case01.objs.Bar;
+import kr.or.ddit.dummy.case01.objs.Baz;
+
+
+/**
+ * Spring DI Container(Bean Container) 사용 단계
+ * Bean: 컨테이너 내부에서 관리되는 객체
+ * 	1. 사용할 객체에 대한 모델링 작업
+ * 		>> 의존성 주입방법에 대한 설계 필수 !!!
+ * 			1) constructor injection: 필수 의존 객체에 대해 주로 사용!
+ * 			2) setter injection
+ * 	2. Core Container 를 사용할 수 있는 메이븐 의존성 추가(pom.xml)
+ * 	3. 컨테이너의 설정 파일 역할을 하는 config 클래스 정의
+ * 		- factory 메소드 정의: 객체를 생성하고 반환하는 메소드
+ * 		- @Bean("BeanName") 어노테이션으로 빈을 등록.
+ * 		bean name을 생략한 경우, 메소드명이 이름으로 반영됨  
+ * 	4. 어플맄네이션의 엔트리 포인트(시작점)에서 컨테이너 객체를 생성함
+ * 		ApplicationContext(얘가 최상위 인터페이스)의 구현체 선택 - AnnotationConfigApplicationContext 
+ *  5. 필요 객체를 컨테이너부터 주입. : getBean
+ */
+@Configuration
+public class Case01BeanRegistConfig {
+	@Bean	// 이 메서드의 반환 객체를 빈으로 등록할거야 !! > 이걸 붙여줘야 팩토리메소드가 된다 !!
+	public Bar barSpecific() {
+		return new Bar();
+	}
+	
+	@Bean("bazSpecific")
+	public Baz baz() {
+		return new Baz();
+	}
+	
+	
+}

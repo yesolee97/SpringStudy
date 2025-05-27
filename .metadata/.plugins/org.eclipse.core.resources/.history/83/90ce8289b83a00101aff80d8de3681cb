@@ -1,0 +1,5 @@
+package kr.or.ddit.dummy.conf;
+
+public class DummyContestConfig {
+
+}

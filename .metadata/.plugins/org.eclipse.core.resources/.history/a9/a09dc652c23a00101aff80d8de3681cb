@@ -1,0 +1,11 @@
+package kr.or.ddit.case02.conf;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+public class Case02DependencyInjectionConfig {
+	@Bean
+	
+	
+}

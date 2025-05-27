@@ -1,0 +1,19 @@
+package kr.or.ddit.case03.objs;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class EagerDummy {
+	private EagerSingletonDummy esd;
+	public EagerDummy() {
+		log.info("{} 객체 기본생성자로 생성", this.getClass().getName());
+	}
+	
+	public void start() {
+		log.info("start 메소드 실행");
+	}
+	
+	public void expire() {
+		log.info("expire 메소드 실행");
+	}
+}

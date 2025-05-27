@@ -1,0 +1,11 @@
+package kr.or.ddit.case03.conf;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class Case03ContainerBeaManagementPolicyConfig {
+	
+	public StringBuffer sb1() {
+		
+	}
+}

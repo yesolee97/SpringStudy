@@ -1,0 +1,43 @@
+package kr.or.ddit.case03.conf;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 스프링 컨테이너의 빈 관리 특성
+ * 1. 싱글턴 scope를 기본으로 사용함.
+ * 	: 싱글턴 스코프의 대상을 등록된 빈을 기준으로 측정함. > 즉, 같은 메소드를 몇번 주입받던 하나로 퉁침
+ * 		@Scope 어노테이션으로 기본 설정을 변경할 수 있음,
+ *  		singleton(기본설정): 미리 객체를 생성하고, 주입할 때마다 동일한 객체가 주입됨
+ *  		prototype: 객테 생성 시점을 뒤로 미루고, 주입 직전에 생성하며, 주입할떄마다 새로운 객체가 생성됨 (@Lazy 설정을 포함함)
+ *  		----------------------------스탠드얼론은 이 위쪽만 사용 가능 ↑↑↑-------------------------------------------------------
+ *  		request: 요청 객체와 똑같은 생명 주기를 갖는 빈 (프로토와 차이, 얜 살아있는동안 계속 같은 객체를 주입해줌)
+ *  		session: 세션 객체와 동일한 생명 주기를 갖는 빈 (세션id가 생성될 때 생성, 세션이 소멸될 때 소멸, 쓰레기 세션처럼 쓰레기 빈도 남음)
+ *  		application: ServletContext와 동일 생명주기를 갖는 빈(서버가 구동될 때 생성, 서버가 꺼질 때 소멸)
+ * 
+ * 	* 기존 싱글턴 - Design Pattern (singleton)
+ * 	: 어플리케이션 실행 중 힙 메모리 상에 특정 클래스의 인스턴스가 하나만 로딩되는 구조
+ * 	  즉, 싱글턴 대상 = 클래스
+ * 
+ * 2. 구체적인 설정이 없으면, eager-loading 방식으로 객체를 미리 생성함. ( 서블릿 컨테이너와 동일한 속성 )
+ * 	@Lazy: 객체가 주입되기 전까지는 생성이 지연됨 
+ */
+
+@Slf4j
+public class Case03ContainerBeaManagementPolicyConfig {
+	@Bean
+	@Lazy // 주입이 될 때 까지 객체 생성을 뒤로 미루는 것
+//	@Scope()
+	public StringBuffer sb1() {
+		log.info("sb1 팩토리 메소드 실행");
+		return new StringBuffer();
+	}
+//	@Bean
+//	public StringBuffer sb2() {
+//		log.info("sb2 팩토리 메소드 실행");
+//		return new StringBuffer();
+//	}
+}

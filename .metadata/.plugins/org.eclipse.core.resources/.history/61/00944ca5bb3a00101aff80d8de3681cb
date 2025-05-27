@@ -1,0 +1,8 @@
+package kr.or.ddit.dummy.case01.objs;
+
+public class Bar {
+
+	public Bar() {
+	}
+	
+}
