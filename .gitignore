@@ -1,0 +1,63 @@
+# Built output
+target/
+build/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# NetBeans
+nbproject/
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+
+# Spring Boot DevTools restart
+.spring-boot-devtools.properties
+
+# OS Specific files (Windows)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+System Volume Information/
+*.cab
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+.~*
+
+# Executable files
+*.exe
+*.bat
+*.sh
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.gz
+
+# 기타 사용자 설정 파일 (필요에 따라 추가)
+# myconfig.properties
+# 특정 프로젝트 폴더 제외
+WebStudy02_MyBatis/

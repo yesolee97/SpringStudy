@@ -1,0 +1,20 @@
+package kr.or.ddit.dummy.case01;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import kr.or.ddit.dummy.case01.conf.Case01BeanRegistConfig;
+import kr.or.ddit.dummy.case01.objs.Bar;
+import kr.or.ddit.dummy.case01.objs.Baz;
+
+public class Case01Playground {
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Case01BeanRegistConfig.class);
+		
+		Bar bar1 = context.getBean(Bar.class);
+		Bar bar2 = context.getBean(Bar.class);
+		Baz baz1 = context.getBean(Baz.class);
+		Baz baz2 = context.getBean(Baz.class);
+		
+	}
+}

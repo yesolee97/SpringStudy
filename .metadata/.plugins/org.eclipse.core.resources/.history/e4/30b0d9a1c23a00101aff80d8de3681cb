@@ -1,0 +1,24 @@
+package kr.or.ddit.case02.conf;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import kr.or.ddit.case02.objs.service.Case02Service;
+
+
+public class Case02DependencyInjectionConfig {
+	@Bean
+	public StringBuffer optionBuffer() {
+		return new StringBuffer();
+	}
+	
+	@Bean
+	public Case02Service dao() {
+		return new Case02Service();
+	}
+	
+	@Bean
+	public Case02Service service() {
+		return new Case02Service();
+	}
+}

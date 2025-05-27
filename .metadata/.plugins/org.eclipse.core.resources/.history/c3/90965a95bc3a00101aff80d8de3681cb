@@ -1,0 +1,12 @@
+package kr.or.ddit.dummy.case01;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import kr.or.ddit.dummy.case01.conf.Case01BeanRegistConfig;
+
+public class Case01Playground {
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(Case01BeanRegistConfig.class);
+	}
+}

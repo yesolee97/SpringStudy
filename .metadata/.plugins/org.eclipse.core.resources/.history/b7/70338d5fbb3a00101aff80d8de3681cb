@@ -1,0 +1,10 @@
+package kr.or.ddit.dummy.case01.conf;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Case01BeanRegistConfig {
+	
+	
+	
+}

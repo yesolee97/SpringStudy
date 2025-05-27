@@ -1,0 +1,26 @@
+package kr.or.ddit.dummy.service;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import kr.or.ddit.dummy.dao.DummyDAO;
+
+public class DummyServiceCase1 {
+	private DummyDAO dao;
+	
+	public StringBuffer readDummy(String pk){
+		Map<String, Object> rawData = dao.selectDummy(pk);
+		StringBuffer infomation = new StringBuffer();
+		for(Entry<String, Object> entry : rawData.entrySet()) {
+			String key = entry.getKey();
+			Object value = entry.getValue();
+			infomation.append(
+				String.format("%s - %s\n", key, value)
+			);
+		}
+		
+		infomation.append("이 재료들을 지지고 볶아서 김치찌개를 만듦");
+		return infomation;
+	}
+}

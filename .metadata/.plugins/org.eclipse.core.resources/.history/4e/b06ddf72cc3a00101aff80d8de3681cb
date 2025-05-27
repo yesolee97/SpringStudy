@@ -1,0 +1,11 @@
+package kr.or.ddit.case03;
+
+
+/**
+ *  메소드를 파라미터로 주입받는 방법까지만 봤음!
+ */
+public class Case03Playground {
+	public static void main(String[] args) {
+		
+	}
+}

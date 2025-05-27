@@ -1,0 +1,6 @@
+package kr.or.ddit.dummy.case01.objs;
+
+public class Foo {
+	private Bar bar;	// 필수 의존 객체
+	private Baz baz;	// 옵셔널 의존 객체
+}
