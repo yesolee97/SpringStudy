@@ -1,0 +1,12 @@
+package kr.or.ddit.case07.objs;
+
+import org.springframework.core.io.Resource;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class ResourcesVO {
+	private final Resource fR;
+	private Resource cR;
+	private Resource wR;
+}

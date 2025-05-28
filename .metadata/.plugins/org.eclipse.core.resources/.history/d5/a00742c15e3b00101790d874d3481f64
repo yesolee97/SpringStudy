@@ -1,0 +1,15 @@
+package kr.or.ddit.case04.conf;
+
+import org.springframework.context.annotation.Bean;
+
+import kr.or.ddit.case04.objs.mapper.Case04DummyMapper;
+
+public class Case04ComponontScanConfig {
+	// 필요한 모든 객체를 빈으로 등록.
+	@Bean
+	public Case04DummyMapper Case04DummyMapperImpl_Oracle() {
+		Case04DummyMapper mapper = new Case04DummyMapperImpl_Oracle();
+		return 
+	}
+	// 의존성 주입을 통해 빈들간의 의존관계 형성
+}

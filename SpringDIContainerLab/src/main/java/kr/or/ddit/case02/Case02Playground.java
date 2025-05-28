@@ -20,9 +20,9 @@ public class Case02Playground {
 		
 		// 종료를 감지하는 데몬 스레드를 돌리겠다 (어플리케이션이 종료도는 시점을 확인 > 이게 확인되면 알아서 어플리케이션을 종료하겠다)
 		// context.registerShutdownHook();
-		
+
+		Case02DAO dao = context.getBean("dao1",Case02DAO.class);
 		Case02Service service = context.getBean(Case02Service.class);
-		Case02DAO dao = context.getBean(Case02DAO.class);
 		
 		log.info("service: {}", service);
 		log.info("dao: {}", dao);

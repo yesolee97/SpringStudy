@@ -1,2 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.dao.DummyDAOFactory"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.dao.DummyDAO"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.dao.DummyDAOImpl_Oracle"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.conf.DummyContextConfig"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.service.DummyServiceCase1"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.dao.DummyDAOImpl_MariaDB"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.case01.conf.Case01BeanRegistConfig"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.case01.objs.Bar"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.case01.objs.Baz"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.dummy.case01.objs.Foo"/>
+    <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case02.objs.service.Case02Service"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case02.conf.Case02DependencyInjectionConfig"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case02.objs.dao.Case02DAO"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="jakarta.annotation.Resource"/>
+    <fullyQualifiedTypeName name="lombok.experimental.Wither"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.ImportResource"/>
+    <fullyQualifiedTypeName name="jakarta.inject.Inject"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ConfigurableApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case03.conf.Case03ContainerBeaManagementPolicyConfig"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case03.objs.LazyDummy"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case03.objs.LazyPrototypeDummy"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Lazy"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case03.objs.EagerSingletonDummy"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="kr.or.ddit.case03.objs.EagerDummy"/>
+</qualifiedTypeNameHistroy>

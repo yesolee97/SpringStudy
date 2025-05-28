@@ -6,6 +6,7 @@
 3.	등록된 빈들간의 관계 형성 : kr.or.ddit.case02
 	--> 동일 타입 빈을 여러개 등록한 경우, 선별 주입방식... 
 4.	컨테이너의 빈 관리 정책 : kr.or.ddit.case03
+★★★★★
 5.	component scan 으로 어노테이션 기반의 빈등록과 관계 형성 : kr.or.ddit.case04
 6.	XML configuration 방식. : kr.or.ddit.case05
 7.	컨테이너 계층 구조 형성 : kr.or.ddit.case06

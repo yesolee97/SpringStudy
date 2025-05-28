@@ -1,0 +1,22 @@
+package kr.or.ddit.case06.conf;
+
+import java.lang.ModuleLayer.Controller;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.FilterType;
+
+import kr.or.ddit.case06.objs.preant.CommonService;
+
+@ComponentScan(basePackages = "kr.or.ddit.case06.objs.user"
+, lazyInit = true
+, useDefaultFilters = false
+, includeFilters = {@Filter(type = FilterType.ANNOTATION, classes = Controller.class)})
+public class UserConfig {
+	private CommonService service;
+	
+	public void setService(CommonService service) {
+		this.service = service;
+	}
+	
+}

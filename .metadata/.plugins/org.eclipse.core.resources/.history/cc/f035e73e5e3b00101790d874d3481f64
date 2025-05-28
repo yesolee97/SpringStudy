@@ -1,0 +1,5 @@
+package kr.or.ddit.case04.conf;
+
+public class Case04ComponontScanConfig {
+	// 필요한 모든 객체를 빈으로 등록.
+}

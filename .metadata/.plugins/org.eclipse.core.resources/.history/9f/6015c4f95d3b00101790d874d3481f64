@@ -1,0 +1,5 @@
+package kr.or.ddit.case04.objs.controller;
+
+public class Case04DummyController {
+	
+}

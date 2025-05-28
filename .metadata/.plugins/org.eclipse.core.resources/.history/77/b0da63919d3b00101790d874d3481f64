@@ -1,0 +1,9 @@
+package kr.or.ddit.case07.objs;
+
+import org.springframework.core.io.Resource;
+
+public class ResourcesVO {
+	private final Resource wR;
+	private Resource cR;
+	private Resource fR;
+}

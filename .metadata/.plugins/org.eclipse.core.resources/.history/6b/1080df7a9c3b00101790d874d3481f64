@@ -1,0 +1,88 @@
+package kr.or.ddit.case07;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import org.apache.commons.io.IOUtils;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.WritableResource;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 스프링을 이용해서 자원을 핸들링하는 방법
+ * Resource: 스프링에서 파일이나 인메모리 자원들을 핸들링할때 사용되는 추상화
+ * 			다형성의 원리에 따라 모든 구현체의 사용 방법은 동일함
+ * ResourceLoader: location 에 따라 자원을 검색하고, Resource 구현체로 생성해서 반환
+ * 
+ * 		자원의 위치와 접근 방법에 따른 분류.
+ * 1. 파일시스템 자원: D:\00.medias\images\cute4.JPG, java.io.File	( 절대경로 존재함 )
+ * ---------- ↓ 절대경로가 없는 경우에는 파일객체 생성에 여러 작업이 필요함 ------
+ * 2. 클래스패스 자원: kr/or/ddit/case05/conf/case05-Context.xml	( 절대 경로 존재 XXX )
+ * 3. 웹 자원		 : https://images.pexels.com/photos/19389607/pexels-photo-19389607.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load
+ */
+
+@Slf4j
+public class Case07Playground {
+	public static void main(String[] args) throws IOException {
+		ConfigurableApplicationContext context = new AnnotationConfigApplicationContext();
+		Resource fR = context.getResource("file:D:\\00.medias\\images\\cute4.JPG");
+		printResourceInfo(fR);
+		
+		Resource cR = context.getResource("classpath:kr/or/ddit/case05/conf/case05-Context.xml");
+		printResourceInfo(cR);
+		
+		Resource wR = context.getResource("http://images.pexels.com/photos/19389607/pexels-photo-19389607.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load");
+		printResourceInfo(cR);
+		String filename = cR.getFilename();
+		File file = new File("d:/", filename);	// ㅇ거 왜 두개 넘겨주는건지
+		WritableResource dest = new FileSystemResource(file);
+		copyResource2(cR, dest);
+		
+		moveResource(fR, dest);
+		
+
+	}
+	
+	// 라이브러리 활용한 카피
+	private static void copyResource2(Resource src, WritableResource dest) throws IOException {
+		try (
+			InputStream is = src.getInputStream();		// byte 스트림임( Write가 안들어가있기 떄문)
+			OutputStream out = dest.getOutputStream();
+		){
+			IOUtils.copy(is,out);
+		}
+	}
+	
+	
+	// 카피하라면 원본(읽어야함), 복제본(기록해줘야함) 있어야함
+	private static void copyResource1(Resource src, WritableResource dest) throws IOException {
+		try (
+			InputStream is = src.getInputStream();		// byte 스트림임( Write가 안들어가있기 떄문)
+			OutputStream out = dest.getOutputStream();
+		){
+			// stream copy 
+			byte[] buffer = new byte[1024];	// 효율 높이기 위해서 버퍼 사용, 읽을때 이만큼씩 읽어라!
+			int cnt = -1;	// 읽어들인 길이가 반환될때마다 저장할 변수
+			// 파일이 끝이 아닌 경우에만 반복문을 돌린다
+			while((cnt = is.read(buffer)) != -1) {	//	-1: EOF(End Of File) 문자
+				out.write(buffer, 0, cnt); 
+			}
+			out.flush();// 마지막 기록에서 남아있는경우 비워주는 용도
+		}
+	}
+	
+	
+	private static void printResourceInfo(Resource res) throws IOException {
+		log.info("로딩된 파일: {}", res);
+		log.info("파일크기: {}", res.contentLength());
+		log.info("파일 이름: {}", res);
+		log.info("파일의 존재 여부: {}", res.exists());		
+	}
+}

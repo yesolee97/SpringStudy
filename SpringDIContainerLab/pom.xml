@@ -9,6 +9,20 @@
 		<maven.compiler.target>21</maven.compiler.target>
 	</properties>
 	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<!-- 설정정보 추가 - 파라미터가 배열 0,1로 뜨는걸 파라미터 명으로 뜨게 해주려고 -->
+				<configuration>
+					<parameters>true</parameters>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 	<!-- context 디펜던시에 버전 안써줘도 되게 이 코드 적용시켜줌, -bom 파일들은 여기서 관리  -->
 	<dependencyManagement>
 		<dependencies>			
@@ -49,6 +63,13 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.38</version>
+		</dependency>
+		
+		<!--IO 지원 -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.19.0</version>
 		</dependency>
 		
 		

@@ -1,0 +1,25 @@
+package kr.or.ddit.case04.objs.controller;
+
+import kr.or.ddit.case04.objs.service.Case04DummyService;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class Case04DummyController {
+	// 부가적인 의존객체: service (즉, setter 로 주입)
+	private Case04DummyService service;
+	public void setService(Case04DummyService service) {
+		this.service = service;
+	}
+	
+	// 기본 생성자
+	public Case04DummyController() {
+		log.info("{}  기본 생성자 실행", service.getClass().getSimpleName());
+	}
+
+
+	public void start() {
+		// 주입 여부에 따라 주입된 객체를 로그로 출력
+		if(service!=null)log.info(" service 주입 여부 >>>>> {}", service.getClass().getName());
+	}
+}

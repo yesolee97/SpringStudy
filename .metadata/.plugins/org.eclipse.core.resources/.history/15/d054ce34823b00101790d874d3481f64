@@ -1,0 +1,13 @@
+package kr.or.ddit.case05.objs;
+
+import org.springframework.stereotype.Repository;
+
+import jakarta.annotation.PostConstruct;
+
+@Repository
+public class Case05DAO {
+	@PostConstruct
+	public void start() {
+		
+	}
+}
