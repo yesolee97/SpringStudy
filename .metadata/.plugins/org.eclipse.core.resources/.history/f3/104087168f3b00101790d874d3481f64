@@ -1,0 +1,28 @@
+package kr.or.ddit.case05;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class Case05Playground {
+	public static void main(String[] args) {
+											  // new ClassPathXmlApplicationContext("kr/or/ddit/case05/conf/case05-Context.xml")
+		ConfigurableApplicationContext context = new GenericXmlApplicationContext();
+		context.registerShutdownHook();
+		
+//		// 1. 등록된 빈의 갯수를 로그로 출력
+//		log.info("{}", context.getBeanDefinitionCount());
+//		
+//		// 2. 등록된 빈의 모든 id를 로그로 출력
+//		String[] names = context.getBeanDefinitionNames();
+//		for(String name:names) {
+//			Object bean = context.getBean(name);
+//			log.info("{} : {}", name, bean);			
+//		}
+		
+		// 다 다시 등록, 의존관계도 등록, 콜백메소드도 동작해야함
+	}
+}

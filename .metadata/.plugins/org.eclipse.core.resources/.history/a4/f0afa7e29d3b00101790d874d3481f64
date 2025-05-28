@@ -1,0 +1,12 @@
+package kr.or.ddit.case07.conf;
+
+import org.springframework.context.annotation.Configuration;
+
+import kr.or.ddit.case07.objs.ResourcesVO;
+
+@Configuration
+public class Case07ResouceLoadingConfig {
+	public ResourcesVO resVO() {
+		
+	}
+}

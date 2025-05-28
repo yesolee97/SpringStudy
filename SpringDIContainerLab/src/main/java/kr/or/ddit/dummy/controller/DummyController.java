@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class DummyController {
 	public static void main(String[] args) {
 		// context = 객체의 저장소, DummyContextConfig에서 저장한 2개의 구현체가 저장되어있음 
-		ApplicationContext context = new AnnotationConfigApplicationContext(DummyContextConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext("kr.or.ddit.dummy");
 		DummyServiceCase1 service = context.getBean(DummyServiceCase1.class);
 		
 		StringBuffer infomation = service.readDummy("primary");

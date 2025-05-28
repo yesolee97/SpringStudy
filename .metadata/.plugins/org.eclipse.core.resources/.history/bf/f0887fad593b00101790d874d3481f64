@@ -1,0 +1,14 @@
+package kr.or.ddit.dummy;
+
+import java.lang.reflect.Method;
+
+public class ReflectionTest {
+	public static void main(String[] args) throws Exception {
+		Method mtd = ReflectionTest.class.getMethod("testMtd", String.class, Integer.class);
+	}
+	// 시그니처만 리플렉션 해보려고 하는거
+	public StringBuffer testMtd(String strArg, Integer intArg) {
+		return null;
+	}
+	
+}

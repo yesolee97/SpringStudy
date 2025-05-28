@@ -1,0 +1,11 @@
+package kr.or.ddit.dummy;
+
+public class ReflectionTest {
+	public static void main(String[] args) {
+		
+	}
+	public StringBuffer testMtd() {
+		return null;
+	}
+	
+}

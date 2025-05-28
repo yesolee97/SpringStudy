@@ -1,0 +1,8 @@
+package kr.or.ddit.case06.conf;
+
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan(basePackages = "kr.or.ddit.case06.objs.admin")
+public class AdminConfig {
+
+}

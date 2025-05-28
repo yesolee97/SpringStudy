@@ -1,0 +1,11 @@
+package kr.or.ddit.case06.objs.xmlchild;
+
+import org.springframework.stereotype.Controller;
+
+import kr.or.ddit.case06.objs.preant.CommonService;
+
+@Controller
+public class XmlChildController {
+	private final CommonService service;
+	
+}

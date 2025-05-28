@@ -1,0 +1,14 @@
+package kr.or.ddit.case04;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import kr.or.ddit.case04.conf.Case04ComponontScanConfig;
+
+public class Case04Playground {
+	public static void main(String[] args) {
+		// 컨테이너 객체 생성
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Case04ComponontScanConfig.class);
+		// 컨테이너 - 매퍼, 컨트롤러, 서비스를 로그로 출력
+		context.getBean(null);
+	}
+}

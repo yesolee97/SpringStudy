@@ -1,0 +1,5 @@
+package kr.or.ddit.case05.objs;
+
+public class Case05Service {
+	private Case05DAO dao;
+}

@@ -1,0 +1,6 @@
+package kr.or.ddit.case04.conf;
+
+public class Case04ComponontScanConfig {
+	// 필요한 모든 객체를 빈으로 등록.
+	// 의존성 주입을 통해 빈들간의 의존관계 형성
+}

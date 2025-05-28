@@ -1,0 +1,19 @@
+package kr.or.ddit.case05.objs;
+
+import org.springframework.stereotype.Service;
+
+import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RequiredArgsConstructor
+@Service("service")
+public class Case05Service {
+	private final Case05DAO dao;
+	
+	@PostConstruct
+	public void start() {
+		log.info("★★ 생성자로 주입된 dao 확인 {}", dao.getClass().getSimpleName());
+	}
+}

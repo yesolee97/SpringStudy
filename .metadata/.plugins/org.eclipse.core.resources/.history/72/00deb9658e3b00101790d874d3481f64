@@ -1,0 +1,8 @@
+package kr.or.ddit.case06.objs.xmlchild;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class XmlChildController {
+
+}

@@ -1,0 +1,22 @@
+package kr.or.ddit.case04.objs.service;
+
+import kr.or.ddit.case04.objs.mapper.Case04DummyMapper;
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
+public class Case04ServiceImpl implements Case04DummyService {
+	// 필수 의존객체:  mapper 
+	// 해당 의존객체의 주입이 완료된 이후 주입된 객체를 로그로 출력
+	private final Case04DummyMapper mapper;
+
+	public Case04ServiceImpl(Case04DummyMapper mapper) {
+		super();
+		this.mapper = mapper;
+	}
+	
+	public void start() {
+		// 주입 여부에 따라 주입된 객체를 로그로 출력
+		log.info("mapper 주입 여부 >>>>> {}", mapper);
+	}
+}
