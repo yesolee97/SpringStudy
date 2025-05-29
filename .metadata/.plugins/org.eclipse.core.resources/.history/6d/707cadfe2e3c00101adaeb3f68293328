@@ -1,0 +1,34 @@
+package kr.or.ddit.case08.conf;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import kr.or.ddit.case08.objs.OriginalVO;
+
+@Configuration
+public class Case08ExpressionLanguageConfig {
+	
+	@Bean
+	public List<String> list(){
+		return new ArrayList<>();
+	}
+	
+	@Bean
+	public List<String> noneUseList(){
+		return new ArrayList<>();
+	}
+	
+	public Map<String, Object> map(){
+		return new HashMap<String, Object>();;
+	}
+	
+	@Bean
+	public OriginalVO originalVO() {
+		return new OriginalVO(null, null, null, null);
+	}
+}

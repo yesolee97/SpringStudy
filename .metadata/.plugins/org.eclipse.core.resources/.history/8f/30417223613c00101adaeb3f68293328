@@ -1,0 +1,8 @@
+package kr.or.ddit.case10.conf;
+
+/**
+ * javax.DataSource
+ */
+public class Case10JdbcConfig {
+	
+}

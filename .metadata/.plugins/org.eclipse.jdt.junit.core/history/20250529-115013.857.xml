@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Case08PlaygroundTest" project="SpringDIContainerLab" tests="2" started="2" failures="0" errors="0" ignored="1">
+  <testsuite name="kr.or.ddit.case08.Case08PlaygroundTest" time="0.002" displayname="Case08PlaygroundTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case08.Case08PlaygroundTest]">
+    <testcase name="testDest" classname="kr.or.ddit.case08.Case08PlaygroundTest" time="0.0" displayname="testDest()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case08.Case08PlaygroundTest]/[method:testDest()]"/>
+    <testcase name="test" classname="kr.or.ddit.case08.Case08PlaygroundTest" time="0.0" ignored="true" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case08.Case08PlaygroundTest]/[method:test()]"/>
+  </testsuite>
+</testrun>

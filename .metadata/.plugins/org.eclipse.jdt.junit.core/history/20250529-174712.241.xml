@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Case10JdbcConfigTest" project="SpringDIContainerLab" tests="4" started="4" failures="0" errors="0" ignored="2">
+  <testsuite name="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.408" displayname="Case10JdbcConfigTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]">
+    <testcase name="testMultiColumn" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.396" displayname="testMultiColumn()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:testMultiColumn()]"/>
+    <testcase name="test" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.007" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:test()]"/>
+    <testcase name="testJdbcTemplate" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.0" ignored="true" displayname="testJdbcTemplate()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:testJdbcTemplate()]"/>
+    <testcase name="testInsert" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.0" ignored="true" displayname="testInsert()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:testInsert()]"/>
+  </testsuite>
+</testrun>

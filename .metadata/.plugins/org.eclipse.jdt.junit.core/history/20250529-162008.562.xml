@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Case09ReadPropertisConfigTest" project="SpringDIContainerLab" tests="2" started="2" failures="0" errors="0" ignored="1">
+  <testsuite name="kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest" time="0.003" displayname="Case09ReadPropertisConfigTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest]">
+    <testcase name="test" classname="kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest" time="0.0" ignored="true" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest]/[method:test()]"/>
+    <testcase name="dbInfo2Test" classname="kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest" time="0.003" displayname="dbInfo2Test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest]/[method:dbInfo2Test()]"/>
+  </testsuite>
+</testrun>

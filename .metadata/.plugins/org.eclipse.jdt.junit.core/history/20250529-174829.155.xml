@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Case10JdbcConfigTest" project="SpringDIContainerLab" tests="4" started="4" failures="0" errors="1" ignored="2">
+  <testsuite name="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.298" displayname="Case10JdbcConfigTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]">
+    <testcase name="testMultiColumn" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.0" ignored="true" displayname="testMultiColumn()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:testMultiColumn()]"/>
+    <testcase name="test" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.282" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:test()]"/>
+    <testcase name="testJdbcTemplate" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.0" ignored="true" displayname="testJdbcTemplate()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:testJdbcTemplate()]"/>
+    <testcase name="testInsert" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.015" displayname="testInsert()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:testInsert()]">
+      <error>org.springframework.dao.InvalidDataAccessApiUsageException: No value supplied for the SQL parameter 'MT_TYPE': Invalid property 'MT_TYPE' of bean class [kr.or.ddit.vo.MbtiVO]: Bean property 'MT_TYPE' is not readable or has an invalid getter method: Does the return type of the getter match the parameter type of the setter?&#13;
+	at org.springframework.jdbc.core.namedparam.NamedParameterUtils.buildValueArray(NamedParameterUtils.java:377)&#13;
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.getPreparedStatementCreator(NamedParameterJdbcTemplate.java:472)&#13;
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.getPreparedStatementCreator(NamedParameterJdbcTemplate.java:446)&#13;
+	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.update(NamedParameterJdbcTemplate.java:337)&#13;
+	at kr.or.ddit.case10.conf.Case10JdbcConfigTest.testInsert(Case10JdbcConfigTest.java:53)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

@@ -1,0 +1,28 @@
+package kr.or.ddit.mission.objs;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
+import kr.or.ddit.case04.objs.service.Case04DummyService;
+import kr.or.ddit.mission.objs.gun.Gun;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Scope("prototype")
+@RequiredArgsConstructor
+@Data
+@Slf4j
+public class Hunter {
+	private final Gun gun;
+	private HuntingDog dog;
+	private Cabbin cabin;
+	
+	@PostConstruct
+	public void start() {
+		log.info("♠♠ 헌터는 생성 끝남! {}, {}, {}", gun, dog,  cabin);
+	}
+}

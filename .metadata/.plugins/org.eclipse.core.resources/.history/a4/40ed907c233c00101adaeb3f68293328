@@ -1,0 +1,9 @@
+package kr.or.ddit.mission;
+
+public class MissionPlayground {
+	public static void main(String[] args) {
+		// 헌팅 그라운드를 주입받고, 로그로 출력
+		// 몇명의 사냥꾼이 어떤 총을 가지고 있는지. 
+		
+	}
+}

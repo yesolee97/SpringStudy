@@ -58,11 +58,35 @@
 		    <artifactId>spring-context</artifactId>
 		</dependency>
 		
+		<!-- ORM -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		</dependency>		
+		<!-- 데이터베이스 연결 지원 -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc11</artifactId>
+		    <version>21.17.0.0</version>
+		</dependency>		
+		<!-- Connection pooling 지원 -->
+		<dependency>
+		   <groupId>com.zaxxer</groupId>
+		   <artifactId>HikariCP</artifactId>
+		   <version>6.3.0</version>
+		</dependency>
+		
 		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.38</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.17.0</version>
 		</dependency>
 		
 		<!--IO 지원 -->
@@ -72,6 +96,12 @@
 			<version>2.19.0</version>
 		</dependency>
 		
+		<!-- 테스트 모듈에서만 사용가능 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <scope>test</scope>
+		</dependency>
 		
 		<!-- JUnit -->
 		<dependency>

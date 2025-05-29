@@ -1,0 +1,8 @@
+package kr.or.ddit.case08.objs;
+
+import org.springframework.stereotype.Component;
+
+//@Component
+public class SimpleVO {
+	private String str;
+}

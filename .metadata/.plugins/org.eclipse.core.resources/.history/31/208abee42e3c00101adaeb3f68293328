@@ -1,0 +1,23 @@
+package kr.or.ddit.case08.conf;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import kr.or.ddit.case08.objs.OriginalVO;
+
+@Configuration
+public class Case08ExpressionLanguageConfig {
+	
+	@Bean
+	public List<String> list(){
+		return new ArrayList<>();
+	}
+	
+	@Bean
+	public OriginalVO originalVO() {
+		return new OriginalVO(null, null, null, null);
+	}
+}

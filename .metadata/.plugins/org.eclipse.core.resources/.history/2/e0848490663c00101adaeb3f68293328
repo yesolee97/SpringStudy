@@ -1,0 +1,66 @@
+package kr.or.ddit.case10.conf;
+
+import java.io.IOException;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.PropertiesFactoryBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.Resource;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.zaxxer.hikari.HikariDataSource;
+
+
+/**
+ * javax.sql.DataSource
+ * JdbcTemplate (대신 실행)
+ * NamedParameterJdbcTemplate
+ */
+public class Case10JdbcConfig {
+	
+	@Bean("infoProps")
+	public PropertiesFactoryBean dbInfoProp(
+			@Value("classpath:kr/or/ddit/db/DBInfo.properties") Resource location	
+		) throws IOException {
+			PropertiesFactoryBean factoryBean = 
+					new PropertiesFactoryBean();
+			log.info("location : {}", location);
+			factoryBean.setLocation(location);
+//			factoryBean.afterPropertiesSet();
+			return factoryBean;
+//			return factoryBean.getObject();
+		}
+
+	
+	@Bean // 반드시 dataSource라는 아이디로 빈을 등록해줘야함
+	public DataSource dataSource(
+		@Value("#{infoProps['maindb.driverClassName']}") String driverClassName,
+		@Value("#{infoProps['maindb.url']}") String url,
+		@Value("#{infoProps['maindb.username']}") String username,
+		@Value("#{infoProps['maindb.password']}") String password,
+		@Value("#{infoProps['maindb.autoCommit']}") boolean autoCommit,
+		@Value("#{infoProps['maindb.minimumIdle']}") int minimumIdle,
+		@Value("#{infoProps['maindb.maximumPoolSize'] }") int maximumPoolSize,
+		@Value("#{infoProps['maindb.connectionTimeout']}") long connectionTimeout
+	) {
+		HikariDataSource ds = new HikariDataSource();
+			ds.setDriverClassName(driverClassName);
+			ds.setJdbcUrl(url);
+			ds.setUsername(username);
+			ds.setPassword(password);
+			ds.setAutoCommit(autoCommit);	// cud 쿼리 실행 후 바로 커밋 실행!! > but, 트렌젝션 관리 xxxx
+			ds.setMinimumIdle(minimumIdle);	// 최초의 ds를 생성할 때 커넥션 최소한 3개는 만들어 놓겠다
+			ds.setMaximumPoolSize(maximumPoolSize);	// 최대로 5개 커넥션까지 운영할 수 있다 ( 만들어 놓은 3개 커넥션이 사용중일경우 2개까지는 즉시 커넥션을 새로 만든다 )
+			ds.setConnectionTimeout(connectionTimeout);	// 최대 몇초까지 기다리고 sql 익셉션 발생시킬건지!!
+		return ds;
+	}
+	
+	
+	public JdbcTemplate jdbcTemplate(
+		DataSource datasuSource
+	) {
+		return new JdbcTemplate(datasuSource);
+	}
+}

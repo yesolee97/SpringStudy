@@ -1,0 +1,5 @@
+package kr.or.ddit.case09.objs;
+
+public class DBInfoVO {
+
+}

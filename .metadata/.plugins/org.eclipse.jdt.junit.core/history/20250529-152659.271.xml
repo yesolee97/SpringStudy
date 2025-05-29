@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Case09ReadPropertisConfigTest" project="SpringDIContainerLab" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest" time="0.012" displayname="Case09ReadPropertisConfigTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest]">
+    <testcase name="test" classname="kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest" time="0.012" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest]/[method:test()]">
+      <error>java.lang.NullPointerException: Cannot invoke "org.springframework.context.annotation.AnnotationConfigApplicationContext.getBean(java.lang.Class)" because "this.context" is null&#13;
+	at kr.or.ddit.case09.conf.Case09ReadPropertisConfigTest.test(Case09ReadPropertisConfigTest.java:21)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

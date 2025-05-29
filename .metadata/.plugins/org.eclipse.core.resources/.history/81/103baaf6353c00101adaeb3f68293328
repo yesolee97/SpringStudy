@@ -1,0 +1,50 @@
+package kr.or.ddit.case08.conf;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+import kr.or.ddit.case08.objs.DestVO;
+import kr.or.ddit.case08.objs.OriginalVO;
+
+@Configuration
+public class Case08ExpressionLanguageConfig {
+  
+  @Bean
+  public List<String> list(){
+    return new ArrayList<String>();
+  }
+  
+  @Bean
+  public List<String> nonUseList(){
+    return new ArrayList<String>();
+  }
+  
+  @Bean
+  public Map<String, Object> map(){
+    return new HashMap<String, Object>();
+  }
+  
+  @Bean
+  public OriginalVO original(
+        List<String> list,
+        Map<String, Object> map,
+        @Value("텍스트") String str,
+        @Value("classpath:logback.xml") Resource res
+      ) {
+    return new OriginalVO(list, map, str, res);
+  };
+  
+  @Bean
+  public DestVO dest(
+        @Value("#{original.str}") String str,
+        @Value("#{original.res}") Resource res
+      ) {
+    return new DestVO(str, res);
+  }
+  
+}

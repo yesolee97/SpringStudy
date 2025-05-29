@@ -1,0 +1,53 @@
+package kr.or.ddit.case08.conf;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+
+import kr.or.ddit.case08.objs.DestVO;
+import kr.or.ddit.case08.objs.OriginalVO;
+
+@Configuration
+public class Case08ExpressionLanguageConfig {
+	
+	@Bean
+	public List<String> list(){
+		return new ArrayList<>();
+	}
+	
+	@Bean
+	public List<String> noneUseList(){
+		return new ArrayList<>();
+	}
+
+	@Bean
+	public Map<String, Object> map(){
+		return new HashMap<>();
+	}
+	
+	@Bean
+	public OriginalVO original(
+		List<String> list,	// 위에서 선언한 list가 여러개일 경우, 메소드 명과 동일한 메소드 명을 써주면 리플렉션 받아서 쓸 수 있음
+		Map<String, Object> map,
+		@Value("텍스트") String str,
+		@Value("classpath:logback.xml") Resource res,
+		@Value("34") int number
+	) {
+		return new OriginalVO(list, map, str, res, number);
+	}
+	
+	@Bean
+	public DestVO dest(
+		@Value("#{original.str + 3}") String str,	// 스프링만 가지고 있는 특수한 연산, 문자열의 길이 *
+		@Value("#{original['res']}") Resource res,
+		@Value("#{original.number * 10}") int number
+	) {
+		return new DestVO(str, res,number);
+	}
+}

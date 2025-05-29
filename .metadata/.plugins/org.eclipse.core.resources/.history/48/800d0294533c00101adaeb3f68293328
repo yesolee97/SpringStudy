@@ -1,0 +1,12 @@
+package kr.or.ddit.case09.conf;
+
+
+/**
+ * DBInfo.properties 파일을 읽고,
+ * 프로퍼티들의 값을 DBInfoVO로 복사
+ * 1. place holder와 property Source(빈으로 등록 x)의 활용
+ * 2. spEL 과 Properties 객체의 활용
+ */
+public class Case09ReadPropertisConfig {
+
+}

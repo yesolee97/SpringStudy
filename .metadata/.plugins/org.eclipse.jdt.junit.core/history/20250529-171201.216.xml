@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Case10JdbcConfigTest" project="SpringDIContainerLab" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.336" displayname="Case10JdbcConfigTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]">
+    <testcase name="test" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.336" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:test()]"/>
+  </testsuite>
+</testrun>
