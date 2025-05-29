@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Case10JdbcConfigTest" project="SpringDIContainerLab" tests="2" started="2" failures="0" errors="2" ignored="0">
+  <testsuite name="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.0" displayname="Case10JdbcConfigTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]">
+    <testcase name="test" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.0" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:test()]">
+      <error>org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kr.or.ddit.case10.conf.Case10JdbcConfigTest': Unsatisfied dependency expressed through field 'jdbcTemplate': No qualifying bean of type 'org.springframework.jdbc.core.JdbcTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@jakarta.inject.Inject()}&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)&#13;
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)&#13;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)&#13;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:405)&#13;
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:156)&#13;
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:111)&#13;
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)&#13;
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)&#13;
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)&#13;
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)&#13;
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)&#13;
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)&#13;
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)&#13;
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.jdbc.core.JdbcTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@jakarta.inject.Inject()}&#13;
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2280)&#13;
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1703)&#13;
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)&#13;
+	... 23 more&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testJdbcTemplate" classname="kr.or.ddit.case10.conf.Case10JdbcConfigTest" time="0.0" displayname="testJdbcTemplate()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case10.conf.Case10JdbcConfigTest]/[method:testJdbcTemplate()]">
+      <error>org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kr.or.ddit.case10.conf.Case10JdbcConfigTest': Unsatisfied dependency expressed through field 'jdbcTemplate': No qualifying bean of type 'org.springframework.jdbc.core.JdbcTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@jakarta.inject.Inject()}&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)&#13;
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)&#13;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)&#13;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:405)&#13;
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:156)&#13;
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:111)&#13;
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)&#13;
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)&#13;
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)&#13;
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)&#13;
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)&#13;
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)&#13;
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)&#13;
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)&#13;
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.jdbc.core.JdbcTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@jakarta.inject.Inject()}&#13;
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2280)&#13;
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1703)&#13;
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)&#13;
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)&#13;
+	... 23 more&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

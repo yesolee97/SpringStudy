@@ -1,0 +1,12 @@
+package kr.or.ddit.case09.objs;
+
+public class DBInfoVO {
+	private String driverClassName;
+	private String url;
+	private String username;
+	private String password;
+	private Boolean autoCommit;
+	private int minimumIdle;
+	private int maximumPoolSize;
+	private long connectionTimeout;
+}

@@ -1,0 +1,36 @@
+package kr.or.ddit.mission;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import kr.or.ddit.mission.conf.MissionConfig;
+import kr.or.ddit.mission.objs.Cabbin;
+import kr.or.ddit.mission.objs.Hunter;
+import kr.or.ddit.mission.objs.HuntingDog;
+import kr.or.ddit.mission.objs.HuntingGround;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class MissionPlayground {
+	public static void main(String[] args) {
+		// 헌팅 그라운드를 주입받고, 로그로 출력
+		// 몇명의 사냥꾼이 어떤 총을 가지고 있는지.
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MissionConfig.class);
+		Hunter hunter = context.getBean(Hunter.class);
+		
+		HuntingGround huntingGround = context.getBean(HuntingGround.class);
+		Hunter hunter2 = context.getBean(Hunter.class);
+		Hunter hunter3 = context.getBean(Hunter.class);
+		
+		HuntingDog dog = context.getBean(HuntingDog.class);
+		Cabbin Cabin = context.getBean(Cabbin.class);
+		hunter.setCabin(Cabin);
+		hunter.setDog(dog);
+		
+		log.info("헌터1 주입 완료 {}", hunter);
+		log.info("갱얼지 주입 완료 {}", dog);
+		log.info("쉼터 주입 완료 {}", Cabin);
+		
+		log.info("헌터2 주입 완료 {}", hunter);
+		context.registerShutdownHook();
+	}
+}

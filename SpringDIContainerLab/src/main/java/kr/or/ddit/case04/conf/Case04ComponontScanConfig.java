@@ -1,6 +1,5 @@
 package kr.or.ddit.case04.conf;
 
-import java.lang.ModuleLayer.Controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import kr.or.ddit.case04.objs.controller.Case04DummyController;
 import kr.or.ddit.case04.objs.mapper.Case04DummyMapper;
@@ -36,6 +38,7 @@ import kr.or.ddit.case04.objs.service.Case04ServiceImpl;
  * @Named("빈id") @Qualifier와 동일
  * @Resource(name을 비롯한 멀티 속성... ): 속성들의 조합으로 주입할 객체를 검색함
  * 
+ * ↓ 단순한 값(리터럴) 주입용
  * @Value: 문자열이나 숫자와같은 리터럴을 이용해 주입받을 떄 사용됨
  * 
  *  등록된 빈의 생명주기 콜백 결정

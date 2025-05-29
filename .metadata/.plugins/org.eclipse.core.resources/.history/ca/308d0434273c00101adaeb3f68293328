@@ -1,0 +1,8 @@
+package kr.or.ddit.mission.objs.gun;
+
+import org.springframework.context.annotation.Primary;
+
+@Primary
+public class Riffle implements Gun {
+
+}

@@ -1,0 +1,8 @@
+package kr.or.ddit.case08.conf;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Case08ExpressionLanguageConfig {
+
+}

@@ -1,0 +1,23 @@
+package kr.or.ddit.case09.conf;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import kr.or.ddit.case09.objs.DBInfoVO;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+class Case09ReadPropertisConfigTest {
+	@Autowired
+	ConfigurableApplicationContext context;
+	
+	@Test
+	void test() {
+		log.info("{}", context.getBean(DBInfoVO.class));
+	}
+
+}

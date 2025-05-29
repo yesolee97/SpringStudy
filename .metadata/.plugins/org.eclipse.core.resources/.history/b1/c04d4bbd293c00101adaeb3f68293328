@@ -1,0 +1,8 @@
+package kr.or.ddit.mission.objs.gun;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class shotGun implements Gun {
+
+}

@@ -1,0 +1,21 @@
+package kr.or.ddit.mission.objs;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+
+@AllArgsConstructor
+@Data
+public class HuntingGround {
+	private HuntingDog dog;
+	private Cabbin cabbin;
+	private List<Hunter> hunters;
+	
+	public void enter(Hunter hunter) {
+		hunters.add(hunter);	// 리스트에 추가
+	}
+}

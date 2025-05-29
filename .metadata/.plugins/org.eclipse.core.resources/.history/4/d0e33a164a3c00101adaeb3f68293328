@@ -1,0 +1,13 @@
+package kr.or.ddit.case08.conf;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan(basePackages = "kr.or.ddit.case08.objs")
+public class Case08MapinjectTestConfing {
+	
+	@Bean
+	public StringBuffer dummy() {
+		return null;
+	}
+}

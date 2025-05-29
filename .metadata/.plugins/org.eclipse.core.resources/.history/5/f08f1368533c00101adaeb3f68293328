@@ -1,0 +1,10 @@
+package kr.or.ddit.case09.conf;
+
+
+/**
+ * DBInfo.properties 파일을 읽고,
+ * 프로퍼티들의 값을 DBInfoVO로 복사
+ */
+public class Case09ReadPropertisConfig {
+
+}

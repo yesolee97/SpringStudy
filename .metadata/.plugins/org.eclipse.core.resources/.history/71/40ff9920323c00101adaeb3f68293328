@@ -1,0 +1,16 @@
+package kr.or.ddit.case08;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+@SpringJUnitConfig(Case08ExpressionLanguageConfig.class)
+class Case08PlaygroundTest {
+
+	@Test
+	void test() {
+		
+	}
+
+}

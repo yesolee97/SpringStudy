@@ -1,0 +1,5 @@
+package kr.or.ddit.case09.conf;
+
+public class Case09ReadPropertisConfig {
+
+}

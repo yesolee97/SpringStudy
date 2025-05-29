@@ -1,0 +1,21 @@
+package kr.or.ddit.mission.objs;
+
+import org.springframework.context.annotation.Scope;
+
+import jakarta.annotation.Resource;
+import kr.or.ddit.case04.objs.service.Case04DummyService;
+import kr.or.ddit.mission.objs.gun.Gun;
+
+@Scope("prototype")
+public class Hunter {
+	private final Gun gun;
+	private HuntingDog dog;
+	private Cabbin cabin;
+	
+	public Hunter(Gun gun) {
+		super();
+		this.gun = gun;
+	}
+	
+	
+}

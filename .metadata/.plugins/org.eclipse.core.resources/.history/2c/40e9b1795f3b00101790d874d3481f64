@@ -1,6 +1,0 @@
-package kr.or.ddit.case04.objs.controller;
-
-public class Case04DummyController {
-	// 부가적인 의존객체: service (즉, setter 로 주입)
-	// 주입 여부에 따라 주입된 객체를 로그로 출력
-}

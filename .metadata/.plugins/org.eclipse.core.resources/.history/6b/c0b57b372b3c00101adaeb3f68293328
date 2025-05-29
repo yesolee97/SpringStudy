@@ -1,0 +1,18 @@
+package kr.or.ddit.mission.objs;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+
+import kr.or.ddit.mission.objs.gun.Gun;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+@Data
+public class HuntingGround {
+	private List<Hunter> hunters;
+	private final HuntingDog dog;
+	private final Cabbin cabbin;
+}

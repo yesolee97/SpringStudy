@@ -1,0 +1,14 @@
+package kr.or.ddit.mission.objs;
+
+import org.springframework.stereotype.Controller;
+
+import kr.or.ddit.mission.objs.gun.Gun;
+
+@Controller
+public class HuntingGround {
+	private final Hunter hunter;
+	private final Gun gun;
+	private final HuntingDog dog;
+	private final Cabbin cabbin;
+	
+}

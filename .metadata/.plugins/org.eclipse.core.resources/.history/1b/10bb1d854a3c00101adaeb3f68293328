@@ -1,0 +1,16 @@
+package kr.or.ddit.case08.conf;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+@SpringJUnitConfig(classes = Case08MapinjectTestConfing.class)
+class Case08MapinjectTestConfingTest {
+
+	@Test
+	void testDummy() {
+		fail("Not yet implemented");
+	}
+
+}
