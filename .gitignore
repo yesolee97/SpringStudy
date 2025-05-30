@@ -61,3 +61,4 @@ System Volume Information/
 # myconfig.properties
 # 특정 프로젝트 폴더 제외
 WebStudy02_MyBatis/
+/.metadata/

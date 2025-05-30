@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.ddit.case11.objs.mapper.LprodMapper">
+	<!-- 어노테이션으로 임포트해갈 resultMap만 만드는 것 -->
+	<resultMap type="LprodVO" id="lprodMap" autoMapping="false">
+		<id property="lprodGu" column="GU"/>
+		<result property="lprodName" column="LPROD_NAME"/>
+		<result property="lprodId" column="LPROD_ID"/>
+		
+		<collection property="prodList" ofType="ProdVO" autoMapping="true">
+			<id property="prodId" column="PROD_ID"/>
+		</collection>
+	</resultMap>
+
+	<select id="selectLprodList" resultType="LprodVO">
+		SELECT LPROD_ID, LPROD_GU, LPROD_NAME
+ 		 FROM LPROD
+	</select>
+</mapper>

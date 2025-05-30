@@ -24,6 +24,7 @@
 	</build>
 	
 	<!-- context 디펜던시에 버전 안써줘도 되게 이 코드 적용시켜줌, -bom 파일들은 여기서 관리  -->
+	<!-- 모듈을 조합할때 버전이 계속 다르면 불편함 > 사용자 입장에서 버전을 이미 여기 bom 파일에서 저해놓음 -->
 	<dependencyManagement>
 		<dependencies>			
 			<dependency>
@@ -34,6 +35,7 @@
 			    <scope>import</scope>
 			</dependency>
 			
+			<!-- 엔터프라이즈 에디션 지원, 버전 충돌을 막기 위해서 이걸로 버전 고정 -->
 			<dependency>
 				<groupId>jakarta.platform</groupId>
 				<artifactId>jakarta.jakartaee-bom</artifactId>
@@ -46,6 +48,12 @@
 	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
+		<!--
+			@PostContruct, @Resource - annotation-api
+			@Inject, Named - Inject-api 
+			이거 두개ㄹ르 따로 넣기 귀찮아서 이렇게 묶어서 넣었데,
+			이걸 따로 넣을떄는 bom이 필요하뎅
+		-->
 		<dependency>
 		    <groupId>jakarta.platform</groupId>
 		    <artifactId>jakarta.jakartaee-api</artifactId>
@@ -74,6 +82,17 @@
 		   <groupId>com.zaxxer</groupId>
 		   <artifactId>HikariCP</artifactId>
 		   <version>6.3.0</version>
+		</dependency>
+		<!-- mybatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.19</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>3.0.4</version>
 		</dependency>
 		
 		

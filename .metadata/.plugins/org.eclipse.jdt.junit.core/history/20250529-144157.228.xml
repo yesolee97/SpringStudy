@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Case08MapinjectTestConfingTest" project="SpringDIContainerLab" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="kr.or.ddit.case08.conf.Case08MapinjectTestConfingTest" time="0.0" displayname="Case08MapinjectTestConfingTest" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case08.conf.Case08MapinjectTestConfingTest]">
-    <testcase name="testDummy" classname="kr.or.ddit.case08.conf.Case08MapinjectTestConfingTest" time="0.0" displayname="testDummy()" uniqueid="[engine:junit-jupiter]/[class:kr.or.ddit.case08.conf.Case08MapinjectTestConfingTest]/[method:testDummy()]"/>
-  </testsuite>
-</testrun>

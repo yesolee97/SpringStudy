@@ -69,6 +69,7 @@ public class Case10JdbcConfig {
 		return new JdbcTemplate(datasuSource);
 	}
 	
+	// 얘가 프리스
 	@Bean
 	public NamedParameterJdbcTemplate npjt(
 		DataSource dataSource
