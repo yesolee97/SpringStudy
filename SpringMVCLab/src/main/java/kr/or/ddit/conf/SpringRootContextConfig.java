@@ -1,7 +1,11 @@
 package kr.or.ddit.conf;
 
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.context.annotation.ComponentScan.Filter;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +16,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Configuration
-@ComponentScan(basePackages = "kr.or.ddit")
+@ComponentScan(basePackages = "kr.or.ddit", excludeFilters = {
+	@Filter(Controller.class), @Filter(ControllerAdvice.class)
+})
 public class SpringRootContextConfig {
 	@PostConstruct
 	public void init() {

@@ -6,6 +6,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\B_Util\3.IDE\eGovFrameDev-4.3.1-64bit\workspace-egov\SpringDIContainerLab"/>
 			<item value="D:\B_Util\3.IDE\eGovFrameDev-4.3.1-64bit\workspace-egov\DummyEgovBootTmpl"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -53,6 +54,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="SpringMVCLab"/>
 			<item value="SpringDIContainerLab"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -64,6 +66,7 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 			<item value="1.0"/>
 		</list>
 	</section>
