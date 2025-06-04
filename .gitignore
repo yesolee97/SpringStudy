@@ -62,3 +62,24 @@ System Volume Information/
 # 특정 프로젝트 폴더 제외
 WebStudy02_MyBatis/
 /.metadata/
+
+# Eclipse-specific files
+.project
+.classpath
+.settings/
+
+# Generated files and directories
+bin/
+target/
+.metadata/
+*.iml
+*.iws
+*.ipr
+*.class
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
