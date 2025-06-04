@@ -101,11 +101,23 @@
 			<version>3.0.4</version>
 		</dependency>
 		
-		
+		<!--java Bean 지원-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.38</version>
+		</dependency>
+		<!-- bean validation 지원-->
+		<dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>9.0.0.Final</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.17.0</version>
 		</dependency>
 		
 		<!-- 테스트 지원 및 junit 연동 모듈 -->

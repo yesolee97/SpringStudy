@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,103 +19,68 @@
   </div>
   <div class="card-body">
     <div class="row">
-    
-       <form method="post" enctype="application/x-www-form-urlencoded">       
+    	<!-- java에서는 class를 키워드로 사용하기 때문에 충돌을 피하기 위해서 굳이 cssclass라는 태그를 만들어서 사용함  -->
+    	<form:form modelAttribute="buyer">
 			<div class="form-group">
-				<label class="form-label" for="buyerName">거래처이름(*)</label>
-				<input 
-					type="text" id="buyerName" name="buyerName" class="form-control"
-					placeholder="거래처이름(*)" value="${buyer.buyerName} ">
-					<span class="text-danger">${errors.buyerName }</span>
+				<form:input path="buyerName" lable="거래처이름(*)" placeholder="거래처이름(*)" cssClass="form-control"/>
+				<form:errors path="buyerName" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="lprodGu">분류코드(*)</label>
-				<select name="LprodGu" id="LprodGu" class="form-select" data-init-val="${buyer.lprodGu}">
+				<form:input path="LprodGu" lable="분류코드(*)" placeholder="분류코드 임시사용(*)" cssClass="form-control"/>
+				<form:errors path="LprodGu" cssClass="text-danger"/>
+				<select name="LprodGufe" id="LprodGu" class="form-select" data-init-val="${buyer.lprodGu}">
 					<option value="">분류선택</option>			
 				</select>
 					<span class="text-danger">${errors.lprodGu }</span>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerBank">주거래은행</label>
-				<input 
-					type="text" id="buyerBank" name="buyerBank" class="form-control"
-					placeholder="주거래은행" value="${buyer.buyerBank} ">
-					<span class="text-danger">${errors.buyerBank }</span>
+				<form:input path="buyerBank" lable="주거래은행" placeholder="주거래은행" cssClass="form-control"/>
+				<form:errors path="buyerBank" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerBankno">계좌번호</label>
-				<input 
-					type="text" id="buyerBankno" name="buyerBankno"
-					class="form-control" placeholder="계좌번호" value="${buyer.buyerBankno} ">
-					<span class="text-danger">${errors.buyerBankno }</span>
+				<form:input path="buyerBankno" lable="계좌번호" placeholder="계좌번호" cssClass="form-control"/>
+				<form:errors path="buyerBankno" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerBankname">예금주</label>
-				<input 
-					type="text" id="buyerBankname" name="buyerBankname"
-					class="form-control" placeholder="예금주" value="${buyer.buyerBankname} ">
-					<span class="text-danger">${errors.buyerBankname }</span>
+				<form:input path="buyerBankname" lable="예금주" placeholder="예금주" cssClass="form-control"/>
+				<form:errors path="buyerBankname" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerZip">우편번호</label>
-				<input
-					type="text" id="buyerZip" name="buyerZip" class="form-control"
-					placeholder="우편번호" value="${buyer.buyerZip} ">
-					<span class="text-danger">${errors.buyerZip }</span>
+				<form:input path="buyerZip" lable="우편번호" placeholder="우편번호" cssClass="form-control"/>
+				<form:errors path="buyerZip" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerAdd1">기본주소</label>
-				<input
-					type="text" id="buyerAdd1" name="buyerAdd1" class="form-control"
-					placeholder="기본주소" value="${buyer.buyerAdd1} ">
-					<span class="text-danger">${errors.buyerAdd1 }</span>
+				<form:input path="buyerAdd1" lable="기본주소" placeholder="기본주소" cssClass="form-control"/>
+				<form:errors path="buyerAdd1" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerAdd2">상세주소</label>
-				<input
-					type="text" id="buyerAdd2" name="buyerAdd2" class="form-control"
-					placeholder="상세주소" value="${buyer.buyerAdd2} ">
-					<span class="text-danger">${errors.buyerAdd2 }</span>
+				<form:input path="buyerAdd2" lable="상세주소" placeholder="상세주소" cssClass="form-control"/>
+				<form:errors path="buyerAdd2" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerComtel">회사전화번호</label>
-				<input 
-					type="text" id="buyerComtel" name="buyerComtel"
-					class="form-control" placeholder="회사전화번호" value="${buyer.buyerComtel} ">
-					<span class="text-danger">${errors.buyerComtel }</span>
+				<form:input path="buyerComtel" lable="회사전화번호" placeholder="회사전화번호" cssClass="form-control"/>
+				<form:errors path="buyerComtel" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerFax">팩스번호</label>
-				<input
-					type="text" id="buyerFax" name="buyerFax" class="form-control"
-					placeholder="팩스번호" value="${buyer.buyerFax} ">
-					<span class="text-danger">${errors.buyerFax }</span>
+				<form:input path="buyerFax" lable="팩스번호" placeholder="팩스번호" cssClass="form-control"/>
+				<form:errors path="buyerFax" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerMail">메일주소</label>
-				<input 
-					type="email" id="buyerMail" name="buyerMail" class="form-control"
-					placeholder="메일주소" value="${buyer.buyerMail} ">
-					<span class="text-danger">${errors.buyerMail }</span>
+				<form:input path="buyerMail" lable="메일주소" placeholder="메일주소" cssClass="form-control"/>
+				<form:errors path="buyerMail" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerCharger">담당자</label>
-				<input 
-					type="text" id="buyerCharger" name="buyerCharger"
-					class="form-control" placeholder="담당자" value="${buyer.buyerCharger} ">
-					<span class="text-danger">${errors.buyerCharger }</span>
+				<form:input path="buyerCharger" lable="담당자" placeholder="담당자" cssClass="form-control"/>
+				<form:errors path="buyerCharger" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="buyerTelext">내선번호</label>
-				<input
-					type="text" id="buyerTelext" name="buyerTelext"
-					class="form-control" placeholder="내선번호" maxlength="2" value="${buyer.buyerTelext} ">
-					<span class="text-danger">${errors.buyerTelext }</span>
+				<form:input path="buyerTelext" lable="내선번호" placeholder="내선번호" cssClass="form-control"/>
+				<form:errors path="buyerTelext" cssClass="text-danger"/>
 			</div>
 			
 			<div>
 				<button type="submit" class="btn btn-primary mb-4">Submit</button>
-				<button type="reset" class="btn btn-danger mb-4">Submit</button>
+				<button type="reset" class="btn btn-danger mb-4">Reset</button>
 			</div>
 			
 	
@@ -134,7 +101,7 @@
            <label class="form-label" for="exampleFormControlTextarea1">Example textarea</label>
            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
          </div>
-       </form>
+       </form:form>
     </div>
   </div>
 </div>
