@@ -1,9 +1,0 @@
-package kr.or.ddit.case05.objs;
-
-public class Case05Controller {
-	private Case05Service service;
-	public void setService(Case05Service service) {
-		this.service = service;
-	}
-	
-}

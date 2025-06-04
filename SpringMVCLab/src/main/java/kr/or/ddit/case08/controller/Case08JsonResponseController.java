@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/case08")
 public class Case08JsonResponseController {
 	
+	/**
+	 * accept 헤더와 무관하게 마샬링이 처리됨. 
+	 * 핸들러 어댑터에 의해 response entity 가 처리되는 형태  (= @ResponseBody가 처리)
+	 * 마샬링의 대상이 되는 response entity를 핸들러 메소드의 리턴 타입에 표현함
+	 * @return
+	 */
 	// map to json
 	@GetMapping("json01")
 	@ResponseBody // 리턴 값을 body에 담아서 보내겠다
@@ -29,7 +35,7 @@ public class Case08JsonResponseController {
 	 * @param model
 	 * 기존 처리 방식 !!
 	 * accept 요청 헤더를 기준으로 content-type을 협상하는 방식
-	 * ContentNegotiatingViewResolver의 동작방식에 따라 GsonView 에서 마샬링이 처리되는 방식
+	 * ContentNegotiatingViewResolver의 동작방식에 따라 GsonView 에서 Model을 대상으로 마샬링이 처리되는 방식
 	 */
 	
 	@GetMapping("json02")

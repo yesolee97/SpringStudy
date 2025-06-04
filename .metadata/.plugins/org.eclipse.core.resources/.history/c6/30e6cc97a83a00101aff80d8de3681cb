@@ -1,7 +1,0 @@
-package kr.or.ddit.dummy.service;
-
-public class DummyServiceCase1 {
-	public StringBuffer readDummy(String pk){
-		
-	}
-}

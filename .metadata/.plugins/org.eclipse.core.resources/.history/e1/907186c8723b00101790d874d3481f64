@@ -1,5 +1,0 @@
-package kr.or.ddit.case05.objs;
-
-public class Case05Controller {
-	private Case05Service service;
-}

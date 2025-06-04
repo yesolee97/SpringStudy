@@ -1,7 +1,0 @@
-package kr.or.ddit.case04.objs.service;
-
-public class Case04ServiceImpl implements Case04DummyService {
-	// 필수 의존객체:  mapper 
-	// 해당 의존객체의 주입이 완료된 이후 주입된 객체를 로그로 출력
-	private Case04DummyMapper mapper;
-}

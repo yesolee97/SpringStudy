@@ -1,7 +1,0 @@
-package kr.or.ddit.dummy.dao;
-
-public class DummyDAOFactory {
-	public Static DummyDAO getDummyDAO(){
-		
-	}
-}
