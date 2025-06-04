@@ -1,5 +1,0 @@
-package kr.or.ddit.case04.objs.service;
-
-public class Case04ServiceImpl implements Case04DummyService {
-
-}

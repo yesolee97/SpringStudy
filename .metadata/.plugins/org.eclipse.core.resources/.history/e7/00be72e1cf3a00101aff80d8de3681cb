@@ -1,7 +1,0 @@
-package kr.or.ddit.case03.objs;
-
-public class LazyDummy {
-	public LazyDummy() {
-		log.info("{} 객체 기본생성자로 생성", this.getClass().getName());
-	}
-}

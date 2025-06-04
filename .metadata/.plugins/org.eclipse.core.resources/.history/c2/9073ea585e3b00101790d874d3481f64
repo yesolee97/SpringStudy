@@ -1,7 +1,0 @@
-package kr.or.ddit.case04;
-
-public class Case04Playground {
-	public static void main(String[] args) {
-		
-	}
-}

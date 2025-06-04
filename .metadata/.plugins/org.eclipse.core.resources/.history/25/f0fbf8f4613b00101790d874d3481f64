@@ -1,5 +1,0 @@
-package kr.or.ddit.case04.objs.mapper;
-
-public class Case04DummyMapperImpl_Oracle implements Case04DummyMapper {
-
-}

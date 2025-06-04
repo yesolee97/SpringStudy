@@ -1,8 +1,0 @@
-package kr.or.ddit.case06;
-
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-public class Sase06Playground {
-	ConfigurableApplicationContext context = new AnnotationConfigApplicationContext("");
-}

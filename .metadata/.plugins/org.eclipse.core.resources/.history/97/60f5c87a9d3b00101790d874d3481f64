@@ -1,7 +1,0 @@
-package kr.or.ddit.case07.objs;
-
-public class ResourcesVO {
-	private Resource wR;
-	private Resource cR;
-	private Resource fR;
-}
