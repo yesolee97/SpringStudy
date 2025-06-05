@@ -12,30 +12,50 @@
 <ul>
 	<li>
 		case01 : <a>컨트롤러 bean 등록과 핸들러 메소드의 request 매핑</a>
+		HandlerMapping, @Controller, @RequestMapping(Value, Methods, consumes, produces)
 	</li>
 	<li>
 		case02 : <a>핸들러 메소드에서 request header[cookie] 처리</a>
+		HandlerApdapter, @RequestHeader, @CookieValue, MultiValueMap, HttpHeaders
 	</li>
 	<li>
 		case03 : <a>컨트롤러에서 뷰를 사용하는 방법(ViewResolver 활용)</a>
+		ContentNegotiatingViewResolver(accept 헤더에 따른 content-type 협상 전략)
+			- GsonView와 같은 defaultView로 처리함 ( 모델 전체를 대상으로 마샬링처리 )
+		InternalResourceViewResolver: prefix + suffix를 활용해 템플릿 엔진으로 응답을 처리함
+	</li>
+	<li>
+		------------------ ↓↓↓↓↓↓ MVC 패턴으로 확장 ------------------ 
 	</li>
 	<li>
 		case04 : <a>컨트롤러에서 뷰로 데이터 전달 방법(Scope 활용 케이스)</a>
+		Model, ModelaAndView, @ModelAttribute(Model을 다른 메소드에서도 공통으로 사용해야할 때)
 	</li>
 	<li>
 		case05 : <a>컨트롤러에서 흐름 제어 방식(forward, redirect)</a>
+		"forward:"  - Model에 저장 -> forward로 이동 -> @RequestAttribute로 꺼냄
+		"redirect:" - RedirectAttribute.addFlashAttribute -> FlashMap에 저장(그 자체로 세션) -> redirect로 이동
+					-> Model로 복구 -> 저장된 데이터 삭제  
 	</li>
 	<li>
 		case06 : <a>핸들러 메소드에서 request parameter 처리</a>
+		@RequestParam(name, required, defaultValue), MultiValueMap(이앞에 리퀘스트파람 어노테이션만 붙이면 됨)
 	</li>
 	<li>
 		case07 : <a>form UI 구성과 데이터 바인딩(Command Object 의 활용)</a>
+		command object는 동시에 model attriute(@ModelAttribute)로 사용됨
+		@Valid, @Vaildated(groups), BindingResult(Errors)-MODEL_KEY_PREFIX + "모델명" >> ErrorsUtils 를 만들어서 처리해줘도 됌
 	</li>
 	<li>
-		case08 : <a>json 응답을 전송하는 방법</a>
+		case08 : <a><b>json 응답</b>을 전송하는 방법</a>
+		응답을 json으로 마샬링해서 내보내야함
+		@ResponseBody : 핸들러 메소드의 반환타입으로 response entity가 반환되는 경우, 직접 response body를 형성하는 방법
+		@restContoller > @Controller + @ResponseBody		
 	</li>
 	<li>
-		case09 : <a>json 요청을 수신하는 방법</a>
+		case09 : <a><b>json 요청을 수신</b>하는 방법</a>
+		json으로 온 요청을 언마샬링해서 해석 해야함
+		@RequestBody로 request entity를 언마샬링 하는 방법 > 뭔 개소린지 모르겠음
 	</li>
 	<li>
 		case10 : <a>파일 핸들링(업다운로드)</a>

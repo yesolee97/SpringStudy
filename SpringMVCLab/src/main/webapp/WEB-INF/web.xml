@@ -67,6 +67,11 @@
 	 		<param-value>/WEB-INF/springmvc/dispatcher-servlet.xml</param-value>
 	 	</init-param>
 	 	<load-on-startup>1</load-on-startup> <!-- 요청이 발생하지 않더라도 서버가 스타트되면 생성됌, 이거로딩방식으로 변경 -->
+	 	<multipart-config>
+	 		<max-file-size>10240000</max-file-size>	<!-- 파일 하나 크기 제한 -->
+	 		<max-request-size>10240000</max-request-size> <!-- 총 업로드 파일크기 제한 -->
+	 		<file-size-threshold>10240</file-size-threshold> <!-- 임계점 설정 - 임시저장소를 쓸지 안쓸지 여부 결정함 -->
+	 	</multipart-config>
 	 </servlet>
 	 <servlet-mapping>
 	 	<servlet-name>dispatcher</servlet-name>
@@ -74,4 +79,15 @@
 	 	<url-pattern>/</url-pattern>
 	 </servlet-mapping>
 	<!-- // end  -->
+	
+	
+	<filter>
+	  <filter-name>sitemesh</filter-name>
+	  <filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	  <filter-name>sitemesh</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>

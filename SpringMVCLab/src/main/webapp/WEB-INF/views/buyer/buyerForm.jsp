@@ -26,9 +26,7 @@
 				<form:errors path="buyerName" cssClass="text-danger"/>
 			</div>
 			<div class="form-group">
-				<form:input path="LprodGu" lable="분류코드(*)" placeholder="분류코드 임시사용(*)" cssClass="form-control"/>
-				<form:errors path="LprodGu" cssClass="text-danger"/>
-				<select name="LprodGufe" id="LprodGu" class="form-select" data-init-val="${buyer.lprodGu}">
+				<select name="LprodGu" id="LprodGu" class="form-select" data-init-val="${buyer.lprodGu}">
 					<option value="">분류선택</option>			
 				</select>
 					<span class="text-danger">${errors.lprodGu }</span>
