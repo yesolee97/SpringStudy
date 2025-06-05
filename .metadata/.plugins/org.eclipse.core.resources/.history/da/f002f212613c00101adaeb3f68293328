@@ -1,5 +1,0 @@
-package kr.or.ddit.case10.conf;
-
-public class Case10JdbcConfig {
-
-}

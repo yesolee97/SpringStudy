@@ -1,8 +1,0 @@
-package kr.or.ddit.mission.objs;
-
-import org.springframework.context.annotation.Scope;
-
-@Scope("prototype")
-public class Hunter {
-
-}

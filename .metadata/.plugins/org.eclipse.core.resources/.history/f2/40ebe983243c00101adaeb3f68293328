@@ -1,8 +1,0 @@
-package kr.or.ddit.mission.objs;
-
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class HuntingGround {
-	private final Hunter hunter;
-}
