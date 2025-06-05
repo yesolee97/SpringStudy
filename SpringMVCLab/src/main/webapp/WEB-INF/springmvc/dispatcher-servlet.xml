@@ -30,6 +30,8 @@
 		<property name="suffix" value=".jsp" />
 	</bean> -->
 	
+	
+	
 	<!-- jsp lvn 등록방법 2 -->
 	<mvc:view-resolvers>
 		<!-- content-negotiation는 json 마샬링 등록해주는 클래스의 퀄러파이드네임을 줘서 마샬링해주는 거임 -->
@@ -43,6 +45,6 @@
 	</mvc:view-resolvers>
 	
 	
-	
-	
+	<!-- 웹 애플리케이션에서 파일을 업로드하는 기능을 구현할 때 스프링이 제공하는 표준적이고 권장되는 방법 -->
+	<bean class="org.springframework.web.multipart.support.StandardServletMultipartResolver" id="multipartResolver" />
 </beans>
