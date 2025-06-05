@@ -26,6 +26,9 @@
 			파일기반 파트: 서버 사이드의 특정 위치(이게 먼저 결정 돼야함)에 저장(Part.write)
 			
 		2) Spring webmvc: dispatcherServlet에 multipart-config 설정 (얘는 한번만 설행해줘도 됨)
+			*** multipartResolver를 빈으로 등록해야함
+			원본 request를 wrapper request(MultipartHttpservletReqauest)로 변경함.
+			원본 Part를 wrapper part(MultipartFile)로 변경함 
 			MultipartFile을 통해 하나의 파트를 캡슐화함
 			핸들러 메소드 인자로 MultiPartFile, @RequesetPart 받음! 전송파일이 여러개일 경우 > MultipartFile[] (배열), command object (VO)로 한번에 받기 가능
 			문자기반 파트: @RequestParam
@@ -36,7 +39,9 @@
 <form method="post" enctype="multipart/form-data">
 <pre>
 	<input type="text" name="uploader" placeholder="업로더" />
+	<span>${errors.uploader }</span>
 	<input type="file" name="uploadFile" placeholder="업로드파일" />
+	<span>${errors.uploadFile }</span>
 	<button type="submit">업로드</button>
 </pre>
 </form>

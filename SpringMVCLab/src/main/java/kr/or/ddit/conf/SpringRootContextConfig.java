@@ -3,6 +3,7 @@ package kr.or.ddit.conf;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -19,9 +20,11 @@ import lombok.extern.slf4j.Slf4j;
 @ComponentScan(basePackages = "kr.or.ddit", excludeFilters = {
 	@Filter(Controller.class), @Filter(ControllerAdvice.class)
 })
+@PropertySource("classpath:/kr/or/ddit/fileInfo.properties")
 public class SpringRootContextConfig {
 	@PostConstruct
 	public void init() {
 		log.info("상위 컨테이너 생성");
 	}
 }
+ 
