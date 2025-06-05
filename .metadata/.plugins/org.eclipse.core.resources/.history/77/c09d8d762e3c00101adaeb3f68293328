@@ -1,9 +1,0 @@
-package kr.or.ddit.case08.objs;
-
-import java.util.List;
-import java.util.Map;
-
-public class OriginalVO {
-	private List<String> list;
-	private Map<String,Object> map;
-}

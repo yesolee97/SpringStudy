@@ -1,8 +1,0 @@
-package kr.or.ddit.case08.conf;
-
-import org.springframework.context.annotation.Bean;
-
-public class Case08MapinjectTestConfing {
-	@Bean
-	public StringBuffer dummy() {}
-}
