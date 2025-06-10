@@ -27,7 +27,7 @@ public class ProdServiceImpl implements ProdService {
 			// 메타데이터(저장명) 분리
 			String saveName = UUID.randomUUID().toString();
 			prod.setProdImg(saveName);
-			// binary 데이터 저장,  저장위치 : , FileInfoContextConfig
+			// 2진 데이터 저장 >> binary 데이터 저장,  저장위치 : , FileInfoContextConfig
 			File saveFile = new File(imagesFolder, saveName);
 			try {
 				prodImage.transferTo(saveFile);

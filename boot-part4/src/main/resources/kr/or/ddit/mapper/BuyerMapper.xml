@@ -78,6 +78,7 @@
 				, BUYER_CHARGER
 				, BUYER_TELEXT
 				, LPROD_NAME
+				, BUYER_IMG
 			  FROM BUYER NATURAL JOIN LPROD
 			 WHERE BUYER_ID=#{BUYERID}
 		)
@@ -90,7 +91,8 @@
 		  FROM BUYERVIEW LEFT OUTER JOIN PROD ON (BUYERVIEW.BUYER_ID=PROD.BUYER_ID)
 	</select>
 	
-	
+	<!-- OGNL 문법 >> 연산자 사용 시 사용되는 문법 -->
+	<!-- <if test="buyerImg != null"></if> -->
 	<insert id="insertBuyer">
 		<!-- order: 순서지정  -->
 		<selectKey resultType="string" keyProperty="buyerId" order="BEFORE">
@@ -115,6 +117,9 @@
 		    buyer_mail,
 		    buyer_charger,
 		    buyer_telext
+		    <if test="buyerImg != null">
+		    	, BUYER_IMG
+		    </if>
 		) VALUES (
 			#{buyerId},
 			#{buyerName},
@@ -129,7 +134,10 @@
 			#{buyerFax},
 			#{buyerMail},
 			#{buyerCharger},
-			#{buyerTelext}			
+			#{buyerTelext}
+		    <if test="buyerImg neq null">
+				, #{buyerImg}
+			</if>
 		)
 	</insert>
 	
@@ -148,6 +156,9 @@
 			, BUYER_MAIL = #{buyerMail}
 			, BUYER_CHARGER = #{buyerCharger}
 			, BUYER_TELEXT = #{buyerTelext}
+		    <if test="buyerImg != null">
+		    	, BUYER_IMG = #{buyerImg}
+		    </if>
 		WHERE BUYER_ID=#{buyerId}
 	</update>
 </mapper>

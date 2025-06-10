@@ -1,0 +1,27 @@
+# Conversion to YAML from Properties formar report
+# Warnings:
+# - The yaml file had comments which are lost in the refactoring!
+spring:
+  application:
+    name: boot-part2
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:oracle:thin:@localhost:1521/XEPDB1
+    username: LYS97
+    password: java
+    hikari:
+      auto-commit: true
+      minimum-idle: 3
+      maximum-pool-size: 5
+      connection-timeout: 20000
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    jdbc-type-for-null: varchar
+  type-aliases-package: kr.or.ddit.vo
+  mapper-locations: classpath:kr/or/ddit/mapper/**/*.xml
+server:
+  port: 80
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

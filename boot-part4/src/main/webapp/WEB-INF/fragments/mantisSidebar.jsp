@@ -5,7 +5,7 @@
     <div class="m-header">
       <a href="${pageContext.request.contextPath }" class="b-brand text-primary">
         <!-- ========   Change your logo from here   ============ -->
-        <img src="${pageContext.request.contextPath }/resources/dist/assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo">
+        <img src="/dist/assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo">
       </a>
     </div>
     <div class="navbar-content">
@@ -56,13 +56,7 @@
           <i class="ti ti-news"></i>
         </li>
         <li class="pc-item">
-          <a href="${pageContext.request.contextPath }/login/loginForm.jsp" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-lock"></i></span>
-            <span class="pc-mtext">Login</span>
-          </a>
-        </li>
-        <li class="pc-item">
-          <a href="../pages/register.html" class="pc-link">
+          <a href="/dist/pages/register.html" class="pc-link">
             <span class="pc-micon"><i class="ti ti-user-plus"></i></span>
             <span class="pc-mtext">Register</span>
           </a>

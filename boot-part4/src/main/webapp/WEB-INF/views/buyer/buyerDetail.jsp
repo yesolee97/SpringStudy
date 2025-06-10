@@ -18,6 +18,12 @@
 					<a href="${updateURL}" class="btn btn-primary">수정</a>
 				</td>
 			</tr>
+			<tr>
+				<th>전경사진</th>
+				<td>
+					<img src="data:image/*;base64,${buyer.buyerImgBase64 }" />
+				</td>
+			</tr>
 			<tr><th>기본주소</th><td>${buyer.buyerAdd1}</td></tr>
 			<tr><th>상세주소</th><td>${buyer.buyerAdd2}</td></tr>
 			<tr><th>회사전화번호</th><td>${buyer.buyerComtel}</td></tr>

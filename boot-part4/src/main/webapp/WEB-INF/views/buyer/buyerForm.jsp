@@ -20,7 +20,12 @@
   <div class="card-body">
     <div class="row">
     	<!-- java에서는 class를 키워드로 사용하기 때문에 충돌을 피하기 위해서 굳이 cssclass라는 태그를 만들어서 사용함  -->
-    	<form:form modelAttribute="buyer">
+    	<form:form modelAttribute="buyer" enctype="multipart/form-data">
+    		<div class="form-group">
+    			<label class="form-label" for="buyerImage">제조사 전경</label>
+    			<input type="file" name="buyerImage" id="buyerImage" accept="image/*" />
+    			<form:errors path="buyerImage" cssClass="text-danger"/>    			 
+    		</div>
 			<div class="form-group">
 				<form:input path="buyerName" lable="거래처이름(*)" placeholder="거래처이름(*)" cssClass="form-control"/>
 				<form:errors path="buyerName" cssClass="text-danger"/>

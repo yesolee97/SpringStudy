@@ -1,170 +1,160 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-<script src="<c:url value='/js/app/buyer/BuyerForm.js'/>"></script>
+<title>Buyer Edit</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src=<c:url value='/js/app/buyer/buyerForm.js'/>></script>
+<script type="text/javascript">
+	const CPATH = '${request.contextPath }';
+	console.log(CPATH)
+</script>
 </head>
 <body>
-<div class="card">
-  <div class="card-header">
-    <h5>BuyerEdit</h5>
-  </div>
-  <div class="card-body">
-    <div class="row">
-    
-       <form method="post" enctype="application/x-www-form-urlencoded">
-			<div class="form-group">
-				<input 
-					type="text" name="buyerId" value="${buyer.buyerId} " readonly>
+	<div class="card">
+		<div class="card-header">
+			<h5>Form controls</h5>
+		</div>
+		<div class="card-body">
+			<div class="row">
+
+				<form method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<input type="text" name="buyerId" value="${buyer.buyerId }" readonly>
+					</div>
+					<div>
+						<label class="form-label" for="buyerImage">제조사전경</label>
+						<input type="file" name="buyerImage" id="buyerImage" accept="image/*"/>
+						<span class="text-danger">${errors.buyerImage }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerName">거래처이름(*)</label>
+						<input 
+							type="text" id="buyerName" name="buyerName" class="form-control"
+							placeholder="거래처이름(*)"
+							value="${buyer.buyerName }"
+						><span class="text-danger">${errors.buyerName }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="lprodGu">분류코드(*)</label>
+						<select name="lprodGu" id="lprodGu" class="form-select"
+							data-init-val="${buyer.lprodGu }"
+						>
+							<option>선택</option>
+						</select>
+						<span class="text-danger">${errors.lprodGu }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerBank">주거래은행</label>
+						<input 
+							type="text" id="buyerBank" name="buyerBank" class="form-control"
+							placeholder="주거래은행"
+							value="${buyer.buyerBank }"
+						><span class="text-danger">${errors.buyerBank }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerBankno">계좌번호</label>
+						<input 
+							type="text" id="buyerBankno" name="buyerBankno"
+							class="form-control" placeholder="계좌번호"
+							value="${buyer.buyerBankno }"
+						><span class="text-danger">${errors.buyerBankno }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerBankname">계좌주</label>
+						<input 
+							type="text" id="buyerBankname" name="buyerBankname"
+							class="form-control" placeholder="계좌주"
+							value="${buyer.buyerBankname }"
+						><span class="text-danger">${errors.buyerBankname }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerZip">우편번호</label><input
+							type="text" id="buyerZip" name="buyerZip" class="form-control"
+							placeholder="우편번호"
+							value="${buyer.buyerZip }"
+						><span class="text-danger">${errors.buyerZip }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerAdd1">기본주소</label><input
+							type="text" id="buyerAdd1" name="buyerAdd1" class="form-control"
+							placeholder="기본주소"
+							value="${buyer.buyerAdd1 }"
+						><span class="text-danger">${errors.buyerAdd1 }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerAdd2">상세주소</label><input
+							type="text" id="buyerAdd2" name="buyerAdd2" class="form-control"
+							placeholder="상세주소"
+							value="${buyer.buyerAdd2 }"
+						><span class="text-danger">${errors.buyerAdd2 }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerComtel">회사전화번호</label>
+						<input 
+							type="text" id="buyerComtel" name="buyerComtel"
+							class="form-control" placeholder="회사전화번호"
+							value="${buyer.buyerComtel }"
+						><span class="text-danger">${errors.buyerComtel }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerFax">팩스번호</label><input
+							type="text" id="buyerFax" name="buyerFax" class="form-control"
+							placeholder="팩스번호"
+							value="${buyer.buyerFax }"
+						><span class="text-danger">${errors.buyerFax }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerMail">메일주소</label>
+						<input 
+							type="email" id="buyerMail" name="buyerMail" class="form-control"
+							placeholder="메일주소"
+							value="${buyer.buyerMail }"
+						><span class="text-danger">${errors.buyerMail }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerCharger">담당자</label>
+						<input 
+							type="text" id="buyerCharger" name="buyerCharger"
+							class="form-control" placeholder="담당자"
+							value="${buyer.buyerCharger }"
+						><span class="text-danger">${errors.buyerCharger }</span>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="buyerTelext">내선번호</label><input
+							type="text" id="buyerTelext" name="buyerTelext"
+							maxlength="2"
+							class="form-control" placeholder="내선번호"
+							value="${buyer.buyerTelext }"
+						><span class="text-danger">${errors.buyerTelext }</span>
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary mb-4">Submit</button>
+						<button type="reset" class="btn btn-danger mb-4">Reset</button>
+					</div>
+
+					<div class="form-group">
+						<label class="form-label" for="exampleFormControlSelect1">Example
+							select</label> <select class="form-select" id="exampleFormControlSelect1">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="exampleFormControlTextarea1">Example
+							textarea</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1"
+							rows="3"></textarea>
+					</div>
+				</form>
+
 			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodName">상품명</label>
-				<input
-					type="text" id="prodName" name="prodName" class="form-control"
-					placeholder="상품명" value="${prod.prodName }">
-				<span class="text-danger">${errors.prodName }</span>
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="lprodGu">분류코드</label>
-				<select name="LprodGu" id="LprodGu" class="form-select" data-init-val="${prod.lprodGu}">
-					<option value="">분류선택</option>			
-				</select>
-				<span class="text-danger">${errors.lprodGu }</span>
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="buyerId">거래처코드(외래키,
-					부모테이블:LPROD)</label>
-					<select name="buyerId" id="buyerId" class="form-select" data-init-val="${prod.buyerId}">
-						<option value="">거래처 선택</option>			
-					</select>
-				<span class="text-danger">${errors.buyerId }</span>
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodCost">매입단가</label>
-				<input
-					type="number" id="prodCost" name="prodCost" class="form-control"
-					placeholder="매입단가" value="${prod.prodCost}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodPrice">매출단가</label>
-				<input
-					type="number" id="prodPrice" name="prodPrice"
-					class="form-control" placeholder="매출단가" value="${prod.prodPrice}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodSale">할인판매단가</label>
-				<input
-					type="number" id="prodSale" name="prodSale" class="form-control"
-					placeholder="할인판매단가" value="${prod.prodSale}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodOutline">매충 설명</label>
-				<input
-					type="text" id="prodOutline" name="prodOutline"
-					class="form-control" placeholder="매충 설명" value="${prod.prodOutline}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodDetail">자세한설명</label>
-				<input
-					type="text" id="prodDetail" name="prodDetail"
-					class="form-control" placeholder="자세한설명" value="${prod.prodDetail}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodImage">상품이미지</label>
-				<input
-					type="text" id="prodImg" name="prodImg" class="form-control"
-					placeholder="상품이미지"  readonly value="${prod.prodImg}" >
-				<input
-					type="file" id="prodImage" name="prodImage" class="form-control"
-					placeholder="상품이미지" value="${prod.prodImage}" >
-				<span class="text-danger">${errors.prodImage }</span>
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodTotalstock">전재고량</label>
-				<input
-					type="number" id="prodTotalstock" name="prodTotalstock"
-					class="form-control" placeholder="전재고량" value="${prod.prodTotalstock}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodProperstock">적정재고</label>
-				<input
-					type="number" id="prodProperstock" name="prodProperstock"
-					class="form-control" placeholder="적정재고" value="${prod.prodProperstock}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodSize">크기</label>
-				<input
-					type="text" id="prodSize" name="prodSize" class="form-control"
-					placeholder="크기" value="${prod.prodSize}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodColor">색상</label>
-				<input
-					type="text" id="prodColor" name="prodColor" class="form-control"
-					placeholder="색상" value="${prod.prodColor}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodDelivery">배송주의사항</label>
-				<input
-					type="text" id="prodDelivery" name="prodDelivery"
-					class="form-control" placeholder="배송주의사항" value="${prod.prodDelivery}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodUnit">판매단위</label>
-				<input
-					type="text" id="prodUnit" name="prodUnit" class="form-control"
-					placeholder="판매단위" value="${prod.prodUnit}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodQtyin">포장수량</label>
-				<input
-					type="number" id="prodQtyin" name="prodQtyin"
-					class="form-control" placeholder="포장수량" value="${prod.prodQtyin}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodQtysale">판매단위수량</label>
-				<input
-					type="number" id="prodQtysale" name="prodQtysale"
-					class="form-control" placeholder="판매단위수량" value="${prod.prodQtysale}" >
-			</div>
-			<div class="form-group">
-				<label class="form-label" for="prodMileage">마일리지</label>
-				<input
-					type="number" id="prodMileage" name="prodMileage"
-					class="form-control" placeholder="마일리지" value="${prod.prodMileage}" >
-			</div>
-			
-			<div>
-				<button type="submit" class="btn btn-primary mb-4">Submit</button>
-				<button type="reset" class="btn btn-danger mb-4">Submit</button>
-			</div>
-			
-	
-	
-	
-	
-			<div class="form-group">
-				<label class="form-label" for="exampleFormControlSelect1">Example
-					select</label> <select class="form-select" id="exampleFormControlSelect1">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-			</div>
-			<div class="form-group">
-           <label class="form-label" for="exampleFormControlTextarea1">Example textarea</label>
-           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-         </div>
-       </form>
-    </div>
-  </div>
-</div>
+		</div>
+	</div>
 </body>
 </html>

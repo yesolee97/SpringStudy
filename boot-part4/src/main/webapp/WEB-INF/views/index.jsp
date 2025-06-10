@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>SSR Welcome Page: index로 만든 웰컴 페이지</h1>
+	<%-- ${pageContext.request.userPricipal.realUser } --%>
 </body>
 </html>
