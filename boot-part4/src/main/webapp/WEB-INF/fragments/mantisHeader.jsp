@@ -154,7 +154,7 @@
 	            </div>
 	            <div class="flex-grow-1 ms-3">
 	              <h6 class="mb-1">${principal.realUser.memName }</h6>
-	              <span>${principal.realUser.memJob }</span>
+	              <span>${principal.realUser.memJob }, ${principal.realUser.memRole }</span>
 	            </div>
 	            <a href="#!" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
 	          </div>
@@ -193,7 +193,7 @@
 	              <i class="ti ti-edit-circle"></i>
 	              <span>Edit Profile</span>
 	            </a>
-	            <a href="#!" class="dropdown-item">
+	            <a href="/mypage" class="dropdown-item">
 	              <i class="ti ti-user"></i>
 	              <span>View Profile</span>
 	            </a>

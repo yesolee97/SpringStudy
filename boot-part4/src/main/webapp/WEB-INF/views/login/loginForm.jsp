@@ -8,12 +8,12 @@
 </head>
 <body>
 
-<c:if test="${not empty message }">
+<%-- <c:if test="${not empty message }">
 	<script>
 		alert('${message}');
 	</script>
 	<c:remove var="message" scope="session"/>
-</c:if>
+</c:if> --%>
 
 <form method="post">
 	<div class="card my-5">
