@@ -120,6 +120,12 @@
 			<version>3.2.1</version>
 		</dependency>
 		
+		<!-- security custom tag -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+		
 		<!--rest API 지원 -->
 		<dependency>
 			<groupId>org.springdoc</groupId>

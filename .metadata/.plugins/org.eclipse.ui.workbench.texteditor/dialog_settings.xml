@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="resp"/>
+		<item key="selection" value="/dist/assets/"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="resp"/>
-			<item value="hi"/>
-			<item value="exception"/>
-			<item value="resolverview"/>
-			<item value="filter"/>
-			<item value="${pageContext.request.contextPath }"/>
-			<item value="/resources"/>
-			<item value="contextPath"/>
-			<item value="selectBuyerList]"/>
-			<item value="selectBuyerList"/>
-			<item value="web"/>
-			<item value="Foo"/>
-			<item value="addrList"/>
-			<item value="addrUl"/>
-			<item value="jstl"/>
+			<item value="../assets"/>
+			<item value="../assets/"/>
+			<item value="CustomUserDetailsService"/>
+			<item value="isAuthenti"/>
+			<item value="c:if"/>
+			<item value="userPricipal"/>
+			<item value="principal"/>
+			<item value="userPrincipal"/>
+			<item value="longTermJob"/>
+			<item value="securedResources"/>
+			<item value="uri"/>
+			<item value="memJob"/>
+			<item value="memJop"/>
+			<item value="authenticationFilter"/>
+			<item value="SpringSecurityConfig"/>
 		</list>
 		<list key="replacehistory">
+			<item value="/dist/assets/"/>
+			<item value="/dist"/>
+			<item value="/dist/"/>
+			<item value="/"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
