@@ -83,3 +83,5 @@ target/
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+/WebStudy_Final/src/main/resources/application.properties
