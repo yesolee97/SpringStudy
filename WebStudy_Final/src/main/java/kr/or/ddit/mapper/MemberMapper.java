@@ -19,4 +19,15 @@ public interface MemberMapper {
 	MemberVO selectMember(String username);
 	
 	int insertMember(MemberVO member);
+	
+	/**
+	 * oauth2 로그인 사용자 조회
+	 * @param mail
+	 * @return
+	 */
+	public MemberVO selectMemberByMail(String mail);
+
+	
+	public int updateMemDelete(String username);
+	public int updateMember(MemberVO member);
 }

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 	console.log(select);
 	/*alert(axios)*/
 	const CPATH = document.body.dataset.contextPath;
-	axios.get(`${CPATH}/rest/lprod`)
+	axios.get(`${CPATH}/ajax/lprod`)
 	.then(resp=>{
 		/*
 		기존 방법

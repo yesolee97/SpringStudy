@@ -20,6 +20,11 @@
   <%@ include file="/WEB-INF/fragments/mantisPreStyle.jsp" %>
   
   <sitemesh:write property="head" />
+	<c:if test="${not empty message }">
+		<script>
+			alert('${message}');
+		</script>
+	</c:if>
 </head>
 <!-- [Head] end -->
 <!-- [Body] Start -->

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 	console.log(lprodGuSel);
 	/*alert(axios)*/
 	const CPATH = document.body.dataset.contextPath;
-	axios.get(`${CPATH}/rest/lprod`)
+	axios.get(`${CPATH}/ajax/lprod`)
 	.then(resp=>{
 		/*
 		기존 방법
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 	const buyerIdSel = document.querySelector("[name='buyerId']");
 	const idInitVal = buyerIdSel.dataset.initVal;
-	axios.get(`${CPATH}/rest/buyer`)
+	axios.get(`${CPATH}/ajax/buyer`)
 	.then(resp=>{		
 		//구조분해로 꺼내는 방법
 		const list = resp.data;

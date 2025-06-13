@@ -4,15 +4,25 @@ import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import kr.or.ddit.vo.MemberVO;
 
-public class MemberVOWrapper implements RealUserWrapper<MemberVO>, UserDetails{
+public class MemberVOWrapper extends User implements RealUserWrapper<MemberVO>{
 	private final MemberVO realUser;
+	
 	// realUser를 받는 생성자
 	public MemberVOWrapper(MemberVO realUser) {
-		super();
+		super(
+			realUser.getMemId()
+			, realUser.getMemPassword()
+			, !realUser.isMemDelete()
+			, true
+			, true
+			, true
+			, AuthorityUtils.createAuthorityList(realUser.getMemRole())
+		);
 		this.realUser = realUser;
 	}
 
@@ -20,23 +30,4 @@ public class MemberVOWrapper implements RealUserWrapper<MemberVO>, UserDetails{
 	public MemberVO getRealUser() {
 		return realUser;
 	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return AuthorityUtils.createAuthorityList(realUser.getMemRole());
-	}
-
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return realUser.getMemPassword();
-	}
-
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return realUser.getMemId();
-	}
-
 }
