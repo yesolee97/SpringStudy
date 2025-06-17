@@ -4,10 +4,10 @@
 
 	<!-- 규칙성을 설정하기 위한 Map result에 설정한 프로퍼티가 setter로 바뀜 -->
 	<!-- resultMap 사용하는방법 -->
-	<resultMap type="ProdVO" id="pordMap" autoMapping="true">
+	<resultMap type="kr.or.ddit.vo.ProdVO" id="pordMap" autoMapping="true">
 		<!-- 중첩맵 사용! 맵안에 맵 -->
-		<association property="buyer" javaType="BuyerVO" autoMapping="true" />		
-		<association property="lprod" javaType="LprodVO" autoMapping="true" />
+		<association property="buyer" javaType="kr.or.ddit.vo.BuyerVO" autoMapping="true" />		
+		<association property="lprod" javaType="kr.or.ddit.vo.LprodVO" autoMapping="true" />
 	</resultMap>
 	<select id="selectProdList" resultMap="pordMap">
 		SELECT

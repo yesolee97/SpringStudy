@@ -124,6 +124,8 @@ public class SpringSecurityConfig {
 	// 폐쇄용이라 화이트리스트 만들어줌 >> 공개용이면 블랙리스트 만들어줌
 	private final String[] WHITE_LIST = new String[] {
 		"/"
+		, "/meeting/**"
+		, "/ws/**"
 		, "/js/**"
 		, "/html/**"
 		, "/dist/**"
