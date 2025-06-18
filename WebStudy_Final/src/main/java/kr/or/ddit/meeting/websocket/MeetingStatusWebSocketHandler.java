@@ -20,6 +20,7 @@ public class MeetingStatusWebSocketHandler extends TextWebSocketHandler {
 	@Value("${contentFile}")
 	private Path contentFile;	// 해당 디렉토리나 경로에 대한 정보만 가직 있는 객체 = Path
 	
+	// 단점 2. 모든 사용자의 접속 정보를 우리가 직접 관리해야함, 근데 멀티 스레딩 고려 전혀 안하는 중 
 	private List<WebSocketSession> sessionList = new ArrayList<>();
 	
 	//  연결된 웹 소켓 대상으로 해서 세션이 하나 만들어짐, 상윤이가 접속하면 상윤이세션, 윤석이가 접속하면 윤석이 세션만들어짐
@@ -37,9 +38,10 @@ public class MeetingStatusWebSocketHandler extends TextWebSocketHandler {
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		// 경로, 기록할대상 - message, 추가할건지 덮어씌울건지 정해줌 
+		// 단점 3. getPayload는 그냥 문자열임, 구조화가 전혀 안되어있음
 		Files.writeString(contentFile, message.getPayload(), StandardOpenOption.WRITE);
 		
-		// 반복문 돌려서 현재 접속되어있는 사람한테 메세지 다 발송해줌
+		// 반복문 돌려서 현재 접속되어있는 사람한테 메세지 다 발송해줌 - 단점1. 강제로 발송, 연결되어있는 사용자는 모두 메세지를 받아야함
 		for(WebSocketSession single: sessionList) {
 			single.sendMessage(message);
 		}

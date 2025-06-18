@@ -24,4 +24,13 @@ public class MeetingStatusController {
 		}
 		return "meeting/status";
 	}
+	
+	@GetMapping("/meeting/stomp")
+	public String meetingViewStomp(Model model) throws IOException {
+		if(Files.exists(contentFile)){
+			String tableContent = Files.readString(contentFile);
+			model.addAttribute("tableContent", tableContent);
+		}
+		return "meeting/status-stomp";
+	}
 }

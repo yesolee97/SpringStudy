@@ -1,8 +1,8 @@
 /**
  * 
  */
-
- document.addEventListener("DOMContentLoaded", ()=>{
+// 20250617 수업내용
+document.addEventListener("DOMContentLoaded", ()=>{
 	// 전이중 통신구조 웹소켓 개방 > 요청이 한번은 넘어가야함 (http기반이라서)
 	const ws = new WebSocket("ws://localhost/ws/meeting/status");
 	// 자바스크립트는 보통 이벤트를 처리할떄 on을 붙여줌, onopen / onclose / onmassage
