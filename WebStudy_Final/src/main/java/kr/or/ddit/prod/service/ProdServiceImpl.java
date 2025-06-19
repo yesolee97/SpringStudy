@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import kr.or.ddit.common.PaginationInfo;
 import kr.or.ddit.mapper.ProdMapper;
 import kr.or.ddit.vo.ProdVO;
 import lombok.RequiredArgsConstructor;
@@ -45,8 +46,8 @@ public class ProdServiceImpl implements ProdService {
 	}
 
 	@Override
-	public List<ProdVO> readProdList() {
-		return mapper.selectProdList();
+	public List<ProdVO> readProdList(PaginationInfo paging) {
+		return mapper.selectProdList(paging);
 	}
 
 	@Override

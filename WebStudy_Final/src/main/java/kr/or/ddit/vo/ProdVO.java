@@ -54,6 +54,7 @@ import lombok.ToString;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 public class ProdVO implements Serializable{
+	private int rnum;
 	@NotBlank(groups = updateGroup.class)
 	private String prodId;
 	@NotBlank

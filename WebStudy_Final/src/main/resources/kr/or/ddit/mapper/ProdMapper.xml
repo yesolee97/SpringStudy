@@ -10,8 +10,11 @@
 		<association property="lprod" javaType="kr.or.ddit.vo.LprodVO" autoMapping="true" />
 	</resultMap>
 	<select id="selectProdList" resultMap="pordMap">
+	SELECT A.*
+	FROM( 
 		SELECT
-	      PROD_ID
+		  ROWNUM RNUM
+	      , PROD_ID
 	      , PROD_NAME
 	      , BUYER_ID
 	      , LPROD_GU
@@ -23,6 +26,10 @@
 	      , BUYER_ADD1
       FROM PROD NATURAL JOIN LPROD
          NATURAL JOIN BUYER
+      ) A
+      <![CDATA[
+      	WHERE RNUM >=#{firstRecordIndex} AND RNUM <=#{lastRecordindex}
+      ]]>
 	</select>
 	
 	

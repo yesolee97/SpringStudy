@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
+import kr.or.ddit.common.PaginationInfo;
 import kr.or.ddit.prod.service.ProdService;
 import kr.or.ddit.vo.ProdVO;
 import lombok.RequiredArgsConstructor;
@@ -35,8 +36,14 @@ public class ProdReadController{
 	private final ProdService service;
 	
 	@GetMapping("/prodList.do")
-	public String doGet(Model model) {
-		List<ProdVO> prodList =  service.readProdList();		
+	public String doGet(
+		Model model
+		,@RequestParam(required = false, defaultValue = "1") int page
+	) {
+		PaginationInfo paging = new PaginationInfo();
+		paging.setCurrentPageNo(page);
+		
+		List<ProdVO> prodList =  service.readProdList(paging);		
 		model.addAttribute("prodList", prodList);
 		
 		return "prod/prodList";

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.or.ddit.common.PaginationInfo;
 import kr.or.ddit.vo.ProdVO;
 
 /**
@@ -25,7 +26,7 @@ public interface ProdMapper {
 	 * 상품 목록 조회, 차후에 페이징과 검색지원 예정.
 	 * @return
 	 */
-	public List<ProdVO> selectProdList();
+	public List<ProdVO> selectProdList(PaginationInfo page);
 	public List<Map<String,Object>> selectProdListForMap();
 	
 	/**

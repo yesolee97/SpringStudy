@@ -15,6 +15,7 @@
 	<table class="table">
 		<thead>
 			<tr>
+				<th>일련번호</th>
 				<th>상품명</th>
 				<th>상품분류</th>
 				<th>제조사</th>
@@ -33,6 +34,7 @@
 						<c:param name="what" value="${prod.buyerId}"></c:param>
 					</c:url>
 					<tr>
+						<td>${prod.rnum }</td>
 						<td>
 							<a href="${detailUrl }">${prod.prodName }</a>
 						</td>

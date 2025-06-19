@@ -3,6 +3,7 @@ package kr.or.ddit.prod.service;
 import java.util.List;
 import java.util.Optional;
 
+import kr.or.ddit.common.PaginationInfo;
 import kr.or.ddit.vo.ProdVO;
 
 /**
@@ -10,7 +11,7 @@ import kr.or.ddit.vo.ProdVO;
  */
 public interface ProdService {
 	public void createProd(ProdVO prod);
-	public List<ProdVO> readProdList();
+	public List<ProdVO> readProdList(PaginationInfo paging);
 	public Optional<ProdVO> readProd(String prodId);	// 이거 왜 널포인트의 안전한 코드를 짤 수 있음??
 	public void modifyProd(ProdVO prod);
 }
