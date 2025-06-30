@@ -7,11 +7,15 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
 import kr.or.ddit.common.PaginationInfo;
+import kr.or.ddit.common.SimpleSearch;
+import kr.or.ddit.common.renderer.DefaultPaginationRenderer;
+import kr.or.ddit.common.renderer.PaginationRenderer;
 import kr.or.ddit.prod.service.ProdService;
 import kr.or.ddit.vo.ProdVO;
 import lombok.RequiredArgsConstructor;
@@ -38,13 +42,19 @@ public class ProdReadController{
 	@GetMapping("/prodList.do")
 	public String doGet(
 		Model model
-		,@RequestParam(required = false, defaultValue = "1") int page
+		, @RequestParam(required = false, defaultValue = "1") int page
+		, @ModelAttribute("search") SimpleSearch simpleSearch
 	) {
 		PaginationInfo paging = new PaginationInfo();
 		paging.setCurrentPageNo(page);
+		paging.setSimpleSearch(simpleSearch);
 		
 		List<ProdVO> prodList =  service.readProdList(paging);		
+		PaginationRenderer renderer = new DefaultPaginationRenderer();
+		String pagingHTML = renderer.renderPagination(paging, "fnPaging");
+		
 		model.addAttribute("prodList", prodList);
+		model.addAttribute("pagingHTML", pagingHTML);
 		
 		return "prod/prodList";
 	}

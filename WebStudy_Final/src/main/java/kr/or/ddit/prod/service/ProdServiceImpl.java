@@ -47,6 +47,8 @@ public class ProdServiceImpl implements ProdService {
 
 	@Override
 	public List<ProdVO> readProdList(PaginationInfo paging) {
+		int totalRecord = mapper.selectTotalRecord(paging);
+		paging.setTotalRecordCount(totalRecord);
 		return mapper.selectProdList(paging);
 	}
 

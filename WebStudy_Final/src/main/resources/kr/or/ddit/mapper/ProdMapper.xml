@@ -9,6 +9,37 @@
 		<association property="buyer" javaType="kr.or.ddit.vo.BuyerVO" autoMapping="true" />		
 		<association property="lprod" javaType="kr.or.ddit.vo.LprodVO" autoMapping="true" />
 	</resultMap>
+	
+	<sql id="fromFrag">
+		  FROM PROD NATURAL JOIN LPROD
+         	   NATURAL JOIN BUYER
+    </sql>
+    
+    <sql id="searchFrag">
+		<where>
+			<if test="simpleSearch.searchWord != null and !simpleSearch.searchWord.isEmpty()">
+				<choose>
+					<when test="simpleSearch.searchType == 'buyer'">
+						INSTR(BUYER_NAME , #{simpleSearch.searchWord}) > 0
+					</when>
+					<when test="simpleSearch.searchType == 'name'">
+						INSTR(PROD_NAME , #{simpleSearch.searchWord}) > 0
+					</when>
+					<otherwise>
+						INSTR(BUYER_NAME , #{simpleSearch.searchWord}) > 0
+						OR
+						INSTR(PROD_NAME , #{simpleSearch.searchWord}) > 0
+					</otherwise>
+				</choose>
+			</if>
+		</where>
+	</sql>
+	
+	<select id="selectTotalRecord" resultType="int">
+		SELECT COUNT(*)
+		<include refid="fromFrag" />
+      	<include refid="searchFrag" />
+	</select>
 	<select id="selectProdList" resultMap="pordMap">
 	SELECT A.*
 	FROM( 
@@ -24,8 +55,8 @@
 	      , LPROD_NAME
 	      , BUYER_NAME
 	      , BUYER_ADD1
-      FROM PROD NATURAL JOIN LPROD
-         NATURAL JOIN BUYER
+      <include refid="fromFrag" />
+      <include refid="searchFrag" />
       ) A
       <![CDATA[
       	WHERE RNUM >=#{firstRecordIndex} AND RNUM <=#{lastRecordindex}

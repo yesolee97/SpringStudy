@@ -23,10 +23,21 @@ public interface ProdMapper {
 	public int insertProd(ProdVO prod);
 	
 	/**
+	 * 페이징 처리를 위해 전체 레코드 수 카운트
+	 * @return
+	 */
+	public int selectTotalRecord(PaginationInfo paging);
+	
+	/**
 	 * 상품 목록 조회, 차후에 페이징과 검색지원 예정.
 	 * @return
 	 */
 	public List<ProdVO> selectProdList(PaginationInfo page);
+	
+	
+	
+	
+	
 	public List<Map<String,Object>> selectProdListForMap();
 	
 	/**

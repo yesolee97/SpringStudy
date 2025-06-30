@@ -3,7 +3,18 @@ package kr.or.ddit.common;
 import lombok.Getter;
 
 @Getter
-public class PaginationInfo {
+public class PaginationInfo<T> {
+	private T detailSearch;
+	public void setDetailSearch(T detailSearch) {
+		this.detailSearch = detailSearch;
+	}
+	
+	// 검색조건 추가 
+	private SimpleSearch simpleSearch;
+	public void setSimpleSearch(SimpleSearch simpleSearch) {
+		this.simpleSearch = simpleSearch;
+	}
+	
 	private int totalRecordCount;		// totalRecord, 데이터베이스 조회
 	
 	private int currentPageNo;			// currentPage, 요청 파라미터
