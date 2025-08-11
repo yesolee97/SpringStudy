@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd ">
+  <persistence-unit name="org.hibernate.tutorial.jpa">
+		<description>
+            Persistence unit for the Jakarta Persistence tutorial of the Hibernate Getting Started Guide
+        </description>
+
+		<class>kr.or.ddit.event.entity.Event</class>
+
+		<properties>
+			<!-- Database connection settings -->
+			<property name="jakarta.persistence.jdbc.driver"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@localhost:1521/XEPDB1" />
+			<property name="jakarta.persistence.jdbc.user"
+				value="LYS97" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="java" />
+
+			<!-- Automatically export the schema -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+
+			<!-- Echo all executed SQL to console -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.highlight_sql" value="true" />
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
